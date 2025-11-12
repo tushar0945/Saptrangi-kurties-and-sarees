@@ -43,3 +43,48 @@
     color: theme("colors.white");
   }
 }
+
+/* ===== Pagination Lines (Visible + Animated) ===== */
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  width: 50px; /* line length */
+  height: 6px; /* line thickness */
+  background-color: #e283a5; /* base gray */
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: #e283a5;
+}
+
+/* Active fill animation */
+.custom-pagination .swiper-pagination-bullet.active-progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #c55a81; /* your brand accent color */
+  animation: fillLine 4s linear forwards; /* sync with autoplay delay */
+}
+
+@keyframes fillLine {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
