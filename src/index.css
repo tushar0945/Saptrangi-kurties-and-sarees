@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------
+   🌐 Global Base Styles — Industry Standard
+-------------------------------------------*/
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-neutral text-dark antialiased font-sans;
+    font-feature-settings: "kern";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-dark tracking-tight;
+  }
+
+  a {
+    @apply text-primary hover:text-dark transition-colors duration-200;
+  }
+
+  button {
+    @apply cursor-pointer focus:outline-none;
+  }
+
+  img {
+    @apply select-none;
+  }
+
+  ::selection {
+    background-color: theme("colors.primary");
+    color: theme("colors.white");
+  }
+}
