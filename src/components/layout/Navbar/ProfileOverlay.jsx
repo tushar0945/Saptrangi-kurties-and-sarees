@@ -1,10 +1,13 @@
 import { X, User, Heart, Package, LogOut } from "lucide-react";
 
 const profileItems = [
-  { label: "My Profile", icon: <User size={18} /> },
-  { label: "Orders", icon: <Package size={18} /> },
-  { label: "Wishlist", icon: <Heart size={18} /> },
-  { label: "Logout", icon: <LogOut size={18} />, danger: true },
+  { label: "My Profile", icon: <User size={16} /> },
+  { label: "Orders", icon: <Package size={16} /> },
+  { label: "Wishlist (32)", icon: <Heart size={16} /> },
+  { label: "Coupons", icon: <Tag size={16} /> },
+  { label: "Gift Cards", icon: <Gift size={16} /> },
+  { label: "Notifications", icon: <Bell size={16} /> },
+  { label: "Logout", icon: <LogOut size={16} />, danger: true },
 ];
 
 const ProfileOverlay = ({ open, onClose }) => {

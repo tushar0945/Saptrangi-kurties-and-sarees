@@ -5,6 +5,21 @@
 /* ------------------------------------------
    🌐 Global Base Styles — Industry Standard
 -------------------------------------------*/
+
+/* Remove horizontal overflow & gaps */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix Swiper auto margin */
+.swiper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -44,47 +59,58 @@
   }
 }
 
-/* ===== Pagination Lines (Visible + Animated) ===== */
+/* Hide default swiper dots */
+.swiper-pagination {
+  display: none !important;
+}
+
+/* ---------- SAFE PAGINATION FIX (preferred) ---------- */
+/* Hide pagination only when an overlay (menu/search) is open */
+body.overlay-open .custom-pagination {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* ---------- DEFAULT PAGINATION ---------- */
 .custom-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative !important;
-  z-index: 50 !important;
-}
-
-.custom-pagination .swiper-pagination-bullet {
-  width: 50px; /* line length */
-  height: 6px; /* line thickness */
-  background-color: #e283a5; /* base gray */
-  border-radius: 10px;
   position: relative;
+  z-index: 20;
+}
+
+/* Pagination styles */
+.custom-pagination .swiper-pagination-bullet {
+  width: 40px;
+  height: 4px;
+  background: #d1d5db;
+  border-radius: 999px;
   overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  position: relative;
 }
 
-.custom-pagination .swiper-pagination-bullet-active {
-  background-color: #e283a5;
-}
-
-/* Active fill animation */
-.custom-pagination .swiper-pagination-bullet.active-progress::before {
+.custom-pagination .active-progress::after {
   content: "";
   position: absolute;
-  top: 0;
   left: 0;
+  top: 0;
   height: 100%;
   width: 0%;
-  background-color: #c55a81; /* your brand accent color */
-  animation: fillLine 4s linear forwards; /* sync with autoplay delay */
+  background: #dc4b82;
+  animation: progressLine 4s linear forwards;
 }
 
-@keyframes fillLine {
+@keyframes progressLine {
   from {
     width: 0%;
   }
   to {
     width: 100%;
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
 }

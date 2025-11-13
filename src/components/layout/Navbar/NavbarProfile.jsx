@@ -334,8 +334,6 @@ const NavbarProfile = ({ onClick }) => {
 
   const profileItems = [
     { label: "My Profile", icon: <User size={16} /> },
-    { label: "SuperCoin Zone", icon: <Zap size={16} /> },
-    { label: "Flipkart Plus Zone", icon: <Star size={16} /> },
     { label: "Orders", icon: <Package size={16} /> },
     { label: "Wishlist (32)", icon: <Heart size={16} /> },
     { label: "Coupons", icon: <Tag size={16} /> },
