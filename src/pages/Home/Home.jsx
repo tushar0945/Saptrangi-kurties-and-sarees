@@ -25,9 +25,9 @@ import HomeTopPicList from "./HomeTopPicList";
 import HomeCategorySection from "./HomeCategorySection";
 
 // Banners
-import sareeBanner from "../../../public/Fourth Carousel.webp";
-import kurtisBanner from "../../../public/Final Carousel.webp";
-import hoodiesBanner from "../../../public/Third Banner.webp";
+import sareeBanner from "/b1.webp";
+import kurtisBanner from "/b2.webp";
+import hoodiesBanner from "/b3.webp";
 
 // Products (demo)
 import k1 from "/k1.webp";
@@ -108,21 +108,21 @@ const Home = () => {
               rating: 4.7,
             },
             {
-              image: s2,
+              image: s1,
               title: "Bridal Saree",
               price: 2999,
               oldPrice: 3999,
               rating: 4.8,
             },
             {
-              image: s3,
+              image: s2,
               title: "Printed Saree",
               price: 1499,
               oldPrice: 1999,
               rating: 4.5,
             },
             {
-              image: s4,
+              image: s3,
               title: "Silk Saree",
               price: 3299,
               oldPrice: 4599,
@@ -172,21 +172,21 @@ const Home = () => {
               rating: 4.6,
             },
             {
-              image: k5,
+              image: k2,
               title: "Grey Kurti",
               price: 1399,
               oldPrice: 2199,
               rating: 4.5,
             },
             {
-              image: k6,
+              image: k3,
               title: "Yellow Kurti",
               price: 1199,
               oldPrice: 1799,
               rating: 4.7,
             },
             {
-              image: k7,
+              image: k4,
               title: "Mint Kurti",
               price: 1499,
               oldPrice: 1899,
@@ -236,7 +236,7 @@ const Home = () => {
               rating: 4.5,
             },
             {
-              image: l2,
+              image: l1,
               title: "Printed Hoodie",
               price: 999,
               oldPrice: 2099,

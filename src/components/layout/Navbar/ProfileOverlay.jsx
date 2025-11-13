@@ -1,4 +1,15 @@
-import { X, User, Heart, Package, LogOut } from "lucide-react";
+import {
+  X,
+  User,
+  LogOut,
+  Heart,
+  Bell,
+  Gift,
+  Package,
+  Tag,
+  Zap,
+  Star,
+} from "lucide-react";
 
 const profileItems = [
   { label: "My Profile", icon: <User size={16} /> },
