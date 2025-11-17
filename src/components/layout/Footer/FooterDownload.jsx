@@ -20,7 +20,7 @@
 const FooterDownload = () => {
   return (
     <div>
-      <h2 className="text-primary font-heading font-semibold text-lg mb-4">
+      <h2 className="text-primary font-heading font-semibold text-lg ">
         DOWNLOAD THE APP
       </h2>
 

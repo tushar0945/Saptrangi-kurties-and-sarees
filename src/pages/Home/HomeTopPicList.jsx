@@ -122,7 +122,7 @@ const HomeTopPicList = () => {
         className="flex gap-4 sm:gap-5
     overflow-x-auto scroll-smooth
     px-3 sm:px-4 md:px-6
-    py-3
+    py-1
     no-scrollbar"
       >
         {kurtis.map((item, index) => (

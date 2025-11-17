@@ -42,12 +42,12 @@ import FooterNewsletter from "./FooterNewsletter";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-14 px-8 font-body">
+    <footer className="bg-dark text-white py-4 px-8 font-body">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
         {/* COLUMN 1 — LOGO + CUSTOMER SERVICE */}
         <div>
           <FooterLogo />
-          <div className="mt-6">
+          <div className="mt-4">
             <FooterCustomerService />
           </div>
         </div>
@@ -59,10 +59,7 @@ const Footer = () => {
 
         {/* COLUMN 3 — DOWNLOAD APP */}
         <div>
-          <FooterDownload />
-          <div className="mt-10">
-            <FooterSocial />
-          </div>
+          <FooterSocial />
         </div>
 
         {/* COLUMN 4 — SOCIAL + NEWSLETTER */}

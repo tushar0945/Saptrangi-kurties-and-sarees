@@ -304,6 +304,62 @@
 
 // export default HomeProductCard;
 
+// import React from "react";
+// import { FaStar } from "react-icons/fa";
+
+// const HomeProductCard = ({ image, title, price, oldPrice, rating }) => {
+//   const discount = oldPrice
+//     ? Math.round(((oldPrice - price) / oldPrice) * 100)
+//     : null;
+
+//   return (
+//     <div className="w-[160px] sm:w-[180px] md:w-[220px] lg:w-[260px] rounded-2xl cursor-pointer transition-all">
+//       <div className="relative w-full h-[220px] sm:h-[260px] md:h-[300px] lg:h-[340px] rounded-2xl overflow-hidden">
+//         <img
+//           src={image}
+//           alt={title}
+//           className="w-full h-full object-cover object-[center_-0%]"
+//         />
+
+//         <div className="absolute bottom-2 left-2 md:bottom-3 md:left-3 flex items-center gap-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md shadow-md">
+//           <FaStar size={12} className="text-yellow-500" />
+//           <span className="text-[11px] md:text-[12px] font-semibold text-gray-800">
+//             {rating}
+//           </span>
+//         </div>
+//       </div>
+
+//       <div className="mt-2 md:mt-3 px-1.5 pb-3">
+//         <h3 className="text-[11px] sm:text-[12px] md:text-[13px] font-bold text-gray-600">
+//           SaptRangi®
+//         </h3>
+
+//         <p className="text-[11px] sm:text-[12px] md:text-[13px] text-gray-900 font-medium leading-tight line-clamp-2">
+//           {title}
+//         </p>
+
+//         <div className="flex items-center gap-2 mt-1 sm:mt-1.5">
+//           <h4 className="text-[14px] sm:text-[15px] md:text-[16px] font-bold">
+//             ₹{price}
+//           </h4>
+//           {oldPrice && (
+//             <>
+//               <p className="text-[11px] sm:text-[12px] line-through text-gray-500">
+//                 ₹{oldPrice}
+//               </p>
+//               <p className="text-[12px] sm:text-[13px] text-green-600 font-semibold">
+//                 {discount}% OFF
+//               </p>
+//             </>
+//           )}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HomeProductCard;
+
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
@@ -313,15 +369,21 @@ const HomeProductCard = ({ image, title, price, oldPrice, rating }) => {
     : null;
 
   return (
-    <div className="w-[160px] sm:w-[180px] md:w-[220px] lg:w-[260px] rounded-2xl cursor-pointer transition-all">
-      <div className="relative w-full h-[220px] sm:h-[260px] md:h-[300px] lg:h-[340px] rounded-2xl overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover object-[center_-0%]"
-        />
+    <div className="w-[180px] sm:w-[200px] md:w-[220px] lg:w-[260px] rounded-2xl cursor-pointer transition-all">
+      {/* Product Image */}
+      <div
+        className="relative w-full 
+                      h-[260px] sm:h-[280px] md:h-[300px] lg:h-[340px] 
+                      rounded-2xl overflow-hidden"
+      >
+        <img src={image} alt={title} className="w-full h-full object-cover" />
 
-        <div className="absolute bottom-2 left-2 md:bottom-3 md:left-3 flex items-center gap-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md shadow-md">
+        {/* Rating Badge */}
+        <div
+          className="absolute bottom-2 left-2 md:bottom-3 md:left-3 
+                        flex items-center gap-1 bg-white/80 backdrop-blur-sm 
+                        px-2 py-0.5 rounded-md shadow-md"
+        >
           <FaStar size={12} className="text-yellow-500" />
           <span className="text-[11px] md:text-[12px] font-semibold text-gray-800">
             {rating}
@@ -329,6 +391,7 @@ const HomeProductCard = ({ image, title, price, oldPrice, rating }) => {
         </div>
       </div>
 
+      {/* Text Information */}
       <div className="mt-2 md:mt-3 px-1.5 pb-3">
         <h3 className="text-[11px] sm:text-[12px] md:text-[13px] font-bold text-gray-600">
           SaptRangi®
@@ -338,10 +401,12 @@ const HomeProductCard = ({ image, title, price, oldPrice, rating }) => {
           {title}
         </p>
 
+        {/* Pricing */}
         <div className="flex items-center gap-2 mt-1 sm:mt-1.5">
           <h4 className="text-[14px] sm:text-[15px] md:text-[16px] font-bold">
             ₹{price}
           </h4>
+
           {oldPrice && (
             <>
               <p className="text-[11px] sm:text-[12px] line-through text-gray-500">
@@ -359,60 +424,3 @@ const HomeProductCard = ({ image, title, price, oldPrice, rating }) => {
 };
 
 export default HomeProductCard;
-// import React from "react";
-// import { FaStar } from "react-icons/fa";
-
-// const HomeProductCard = ({ image, title, price, oldPrice, rating }) => {
-//   const discount = oldPrice
-//     ? Math.round(((oldPrice - price) / oldPrice) * 100)
-//     : null;
-
-//   return (
-//     <div className="w-[260px]  rounded-2xl cursor-pointer transition-all">
-//       <div className="relative w-full h-[340px] rounded-2xl overflow-hidden">
-//         <img
-//           src={image}
-//           alt={title}
-//           className="w-full h-full object-cover object-[center_-0%]"
-//         />
-
-//         {/* ⭐ Rating Badge */}
-//         <div className="absolute bottom-3 left-3 flex items-center gap-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md shadow-md">
-//           <FaStar size={13} className="text-yellow-500" />
-//           <span className="text-[12px] text-gray-800 font-semibold">
-//             {rating}
-//           </span>
-//         </div>
-//       </div>
-
-//       {/* DETAILS */}
-//       <div className="mt-3 px-1.5 pb-3">
-//         {/* Brand */}
-//         <h3 className="text-[13px] font-bold text-gray-600">SaptRangi®</h3>
-
-//         {/* Title */}
-//         <p className="text-[13px] text-gray-900 font-medium leading-tight line-clamp-2">
-//           {title}
-//         </p>
-
-//         {/* PRICE */}
-//         <div className="flex items-center gap-2 mt-1.5">
-//           <h4 className="text-[15px] font-bold text-gray-900">₹{price}</h4>
-
-//           {oldPrice && (
-//             <>
-//               <p className="text-[12px] line-through text-gray-500">
-//                 ₹{oldPrice}
-//               </p>
-//               <p className="text-[12px] font-semibold text-green-600">
-//                 {discount}% OFF
-//               </p>
-//             </>
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HomeProductCard;

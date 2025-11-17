@@ -39,7 +39,7 @@ import { FiTruck, FiCreditCard } from "react-icons/fi";
 const FooterCustomerService = () => {
   return (
     <div>
-      <h2 className="text-primary font-heading font-semibold text-lg mb-4">
+      <h2 className="text-primary font-heading font-semibold text-lg mb-1">
         CUSTOMER SERVICE
       </h2>
 
@@ -58,7 +58,7 @@ const FooterCustomerService = () => {
         </li>
       </ul>
 
-      <div className="mt-6 space-y-3">
+      <div className="mt-3 space-y-3">
         <div className="flex items-center gap-2 text-sm">
           <FiTruck className="text-primary text-lg" />
           <span>15 Days Return Policy*</span>

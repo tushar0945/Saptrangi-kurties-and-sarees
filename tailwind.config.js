@@ -10,6 +10,7 @@ export default {
         neutral: "#E9EBEA", // Gentle Grey – 🌿 Main Background
         dark: "#1F1F1F", // Deep dark – text / contrast
         white: "#FFFFFF", // Pure white – for cards / surfaces
+        // greay: "#5f6368",
       },
       fontFamily: {
         heading: ["Poppins", "sans-serif"],

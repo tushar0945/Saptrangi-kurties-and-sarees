@@ -43,11 +43,11 @@ import {
 const FooterSocial = () => {
   return (
     <div>
-      <h2 className="text-primary font-heading font-semibold text-lg mb-4">
+      <h2 className="text-primary font-heading font-semibold text-lg mb-1">
         CONNECT WITH US
       </h2>
 
-      <div className="flex items-center space-x-4 text-xl mb-4">
+      <div className="flex items-center space-x-4 text-xl mb-2">
         <FaFacebookF className="cursor-pointer hover:text-primary transition" />
         <FaInstagram className="cursor-pointer hover:text-primary transition" />
         <FaTwitter className="cursor-pointer hover:text-primary transition" />

@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeHeading = ({ title }) => {
   return (
-    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mt-6 sm:mt-8 mb-4 sm:mb-6 text-gray-800 px-4">
+    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mt-2 sm:mt-2 mb-2 sm:mb-2 text-gray-800 px-2">
       {title}
     </h2>
   );

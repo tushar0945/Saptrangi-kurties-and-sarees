@@ -59,7 +59,7 @@ const Home = () => {
       <HomeCarousel />
 
       {/* ------- Page Container ------- */}
-      <div className="max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto px-3 sm:px-4 md:px-4 lg:px-10">
         {/* ------- Top Picks Section ------- */}
         <HomeHeading title="Top Picks" />
         <HomeTopPicList />

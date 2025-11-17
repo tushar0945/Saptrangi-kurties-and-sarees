@@ -31,11 +31,11 @@
 const FooterNewsletter = () => {
   return (
     <div>
-      <h2 className="text-primary font-heading font-semibold text-lg mb-4">
+      <h2 className="text-primary font-heading font-semibold text-lg mb-1">
         KEEP IN TOUCH
       </h2>
 
-      <p className="text-sm text-gray-300 mb-4">
+      <p className="text-sm text-gray-300 mb-2">
         Get updates on new arrivals, collections & offers.
       </p>
 

@@ -20,7 +20,7 @@
 const FooterCompany = () => {
   return (
     <div>
-      <h2 className="text-primary font-heading font-semibold text-lg mb-4">
+      <h2 className="text-primary font-heading font-semibold text-lg mb-1">
         COMPANY
       </h2>
 
@@ -33,9 +33,6 @@ const FooterCompany = () => {
         </li>
         <li className="hover:text-primary cursor-pointer transition">
           Privacy Policy
-        </li>
-        <li className="hover:text-primary cursor-pointer transition">
-          We are Hiring
         </li>
       </ul>
     </div>
