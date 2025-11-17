@@ -913,21 +913,9 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const HomeCarousel = () => {
+const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
   const desktopPaginationRef = useRef(null);
   const mobilePaginationRef = useRef(null);
-
-  // Desktop banners
-  const desktopBanners = [
-    { image: "/c1.webp", alt: "Desktop Banner 1" },
-    { image: "/c2.jpg", alt: "Desktop Banner 2" },
-  ];
-
-  // Mobile banners
-  const mobileBanners = [
-    { image: "/sc1.png", alt: "Mobile Banner 1" },
-    { image: "/sc2.png", alt: "Mobile Banner 2" },
-  ];
 
   // Pagination initializer (same for both)
   const initPagination = (swiper, ref) => {
