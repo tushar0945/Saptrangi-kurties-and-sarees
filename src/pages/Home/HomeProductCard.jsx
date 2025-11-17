@@ -369,16 +369,22 @@ const HomeProductCard = ({ image, title, price, oldPrice, rating }) => {
     : null;
 
   return (
-    <div className="w-[180px] sm:w-[200px] md:w-[220px] lg:w-[260px] rounded-2xl cursor-pointer transition-all">
-      {/* Product Image */}
+    <div
+      className="w-[190px] sm:w-[210px] md:w-[230px] lg:w-[260px] 
+                    rounded-2xl cursor-pointer transition-all"
+    >
+      {/* IMAGE */}
       <div
         className="relative w-full 
-                      h-[260px] sm:h-[280px] md:h-[300px] lg:h-[340px] 
+                      h-[300px] sm:h-[320px] md:h-[330px] lg:h-[360px] 
                       rounded-2xl overflow-hidden"
       >
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover object-[center_-0%]"
+        />
 
-        {/* Rating Badge */}
         <div
           className="absolute bottom-2 left-2 md:bottom-3 md:left-3 
                         flex items-center gap-1 bg-white/80 backdrop-blur-sm 
@@ -391,28 +397,25 @@ const HomeProductCard = ({ image, title, price, oldPrice, rating }) => {
         </div>
       </div>
 
-      {/* Text Information */}
+      {/* TEXT */}
       <div className="mt-2 md:mt-3 px-1.5 pb-3">
-        <h3 className="text-[11px] sm:text-[12px] md:text-[13px] font-bold text-gray-600">
+        <h3 className="text-[12px] md:text-[13px] font-bold text-gray-600">
           SaptRangi®
         </h3>
 
-        <p className="text-[11px] sm:text-[12px] md:text-[13px] text-gray-900 font-medium leading-tight line-clamp-2">
+        <p className="text-[12px] md:text-[13px] text-gray-900 font-medium leading-tight line-clamp-2">
           {title}
         </p>
 
-        {/* Pricing */}
-        <div className="flex items-center gap-2 mt-1 sm:mt-1.5">
-          <h4 className="text-[14px] sm:text-[15px] md:text-[16px] font-bold">
-            ₹{price}
-          </h4>
+        <div className="flex items-center gap-2 mt-1">
+          <h4 className="text-[15px] md:text-[16px] font-bold">₹{price}</h4>
 
           {oldPrice && (
             <>
-              <p className="text-[11px] sm:text-[12px] line-through text-gray-500">
+              <p className="text-[12px] line-through text-gray-500">
                 ₹{oldPrice}
               </p>
-              <p className="text-[12px] sm:text-[13px] text-green-600 font-semibold">
+              <p className="text-[13px] text-green-600 font-semibold">
                 {discount}% OFF
               </p>
             </>
