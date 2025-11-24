@@ -62,7 +62,7 @@ const AddToCartSection = ({ product, quantity }) => {
         onClick={handleAddToCart}
         className="
           w-full py-3 rounded-xl font-semibold text-lg
-          bg-primary text-dark 
+          bg-primary text-white 
           hover:bg-secondary 
           transition-all duration-300
           shadow-md hover:shadow-xl
