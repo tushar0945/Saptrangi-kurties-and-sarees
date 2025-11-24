@@ -1,9 +1,25 @@
+// const NavbarLogo = () => {
+//   return (
+//     <div className="text-2xl font-bold italic text-black cursor-pointer">
+//       <span className="text-black">Sapt</span>
+//       <span className="text-primary">Rangi</span>
+//     </div>
+//   );
+// };
+
+// export default NavbarLogo;
+
+import { Link } from "react-router-dom";
+
 const NavbarLogo = () => {
   return (
-    <div className="text-2xl font-bold italic text-black cursor-pointer">
+    <Link
+      to="/"
+      className="text-2xl font-bold italic text-black cursor-pointer"
+    >
       <span className="text-black">Sapt</span>
       <span className="text-primary">Rangi</span>
-    </div>
+    </Link>
   );
 };
 

@@ -947,6 +947,7 @@ const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
               <img
                 src={item.image}
                 alt={item.alt}
+                loading="lazy"
                 className="w-full h-auto object-fill"
               />
             </SwiperSlide>
@@ -976,6 +977,7 @@ const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
               <img
                 src={item.image}
                 alt={item.alt}
+                loading="lazy"
                 className="w-full h-auto object-fill"
               />
             </SwiperSlide>

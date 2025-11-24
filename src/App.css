@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  .app-container {
-    @apply min-h-screen flex flex-col bg-neutral text-dark;
-  }
-
   .section {
     @apply py-16 px-6 md:px-12 lg:px-24;
   }

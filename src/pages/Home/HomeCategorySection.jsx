@@ -9,6 +9,7 @@ const HomeCategorySection = ({ bannerImage, title, products }) => {
         <img
           src={bannerImage}
           alt={title}
+          loading="lazy"
           className="w-full h-auto object-cover"
         />
       </div>
