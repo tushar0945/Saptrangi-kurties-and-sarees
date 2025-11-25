@@ -34,6 +34,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import ProductDetails from "../pages/Product/ProductDetails";
 import CategoryPage from "../pages/Category/CategoryPage";
+import CartPage from "../pages/Cart/CartPage";
+import CheckoutPage from "../pages/Checkout/CheckoutPage";
 
 const AppRoutes = () => {
   return (
@@ -46,7 +48,8 @@ const AppRoutes = () => {
 
       <Route path="/category/:categorySlug" element={<CategoryPage />} />
 
-      {/* Add more routes later */}
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
     </Routes>
   );
 };

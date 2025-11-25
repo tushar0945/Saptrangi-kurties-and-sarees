@@ -1,0 +1,144 @@
+// import React from "react";
+// import CartItem from "./components/CartItem";
+// import CartSummary from "./components/CartSummary";
+// import DeliveryPincodeBox from "./components/DeliveryPincodeBox";
+
+// const CartPage = () => {
+//   // 🔥 dummy cart items (later replace with context or redux)
+//   const cartItems = [
+//     {
+//       id: 1,
+//       title: "Peach Kurti",
+//       price: 1299,
+//       originalPrice: 1999,
+//       size: "M",
+//       qty: 1,
+//       image: "/assets/peach-kurti.jpg",
+//     },
+//   ];
+
+//   return (
+//     <div className="max-w-[1200px] mx-auto px-4 lg:px-6 py-10">
+//       <h1 className="text-2xl font-semibold mb-6">
+//         My Bag ({cartItems.length})
+//       </h1>
+
+//       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+//         {/* LEFT = items */}
+//         <div className="lg:col-span-2 flex flex-col gap-4">
+//           {cartItems.map((item) => (
+//             <CartItem key={item.id} item={item} />
+//           ))}
+//         </div>
+
+//         {/* RIGHT = summary */}
+
+//         <CartSummary cartItems={cartItems} />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CartPage;
+
+// import React from "react";
+// import CartItem from "./components/CartItem";
+// import CartSummary from "./components/CartSummary";
+// import DeliveryPincodeBox from "./components/DeliveryPincodeBox";
+// import TrustBadges from "./components/TrustBadges";
+
+// const CartPage = () => {
+//   const cartItems = [
+//     {
+//       id: 1,
+//       brand: "Saptrangi",
+//       title: "Peach Kurti",
+//       price: 1299,
+//       originalPrice: 1999,
+//       saved: 700,
+//       deliveryDate: "28 Nov 2025",
+//       size: "M",
+//       qty: 1,
+//       image: "./k1.webp",
+//     },
+//   ];
+
+//   return (
+//     <div className="max-w-[1200px] mx-auto px-4 lg:px-6 py-10">
+//       <h1 className="text-2xl font-semibold mb-6">
+//         My Bag ({cartItems.length})
+//       </h1>
+
+//       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+//         {/* LEFT → CART ITEMS */}
+//         <div className="lg:col-span-2 flex flex-col gap-4">
+//           {cartItems.map((item) => (
+//             <CartItem key={item.id} item={item} />
+//           ))}
+//         </div>
+
+//         {/* RIGHT → DELIVERY + SUMMARY */}
+//         <div className="flex flex-col gap-5">
+//           {/* ⭐ Delivery Pincode Box */}
+//           <DeliveryPincodeBox
+//             pincode="425408"
+//             onChange={() => console.log("Change pincode")}
+//           />
+
+//           {/* ⭐ Price Summary */}
+//           <CartSummary cartItems={cartItems} />
+//           <TrustBadges />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CartPage;
+
+import React from "react";
+import CartItem from "./components/CartItem";
+import CartSummary from "./components/CartSummary";
+import DeliveryPincodeBox from "./components/DeliveryPincodeBox";
+import TrustBadges from "./components/TrustBadges";
+import { useCart } from "../../context/CartContext"; // ⭐ added
+
+const CartPage = () => {
+  const { cart } = useCart(); // ⭐ real cart data
+
+  return (
+    <div className="max-w-[1200px] mx-auto px-4 lg:px-6 py-10">
+      <h1 className="text-2xl font-semibold mb-6">My Bag ({cart.length})</h1>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* LEFT → CART ITEMS */}
+        <div className="lg:col-span-2 flex flex-col gap-4">
+          {cart.map((item) => (
+            <CartItem
+              key={item.id + item.size} // unique key
+              item={item}
+            />
+          ))}
+
+          {cart.length === 0 && (
+            <p className="text-gray-600 mt-4 text-lg">Your bag is empty.</p>
+          )}
+        </div>
+
+        {/* RIGHT → DELIVERY + SUMMARY */}
+        <div className="flex flex-col gap-5">
+          {/* ⭐ Delivery Pincode Box */}
+          <DeliveryPincodeBox
+            pincode="425408"
+            onChange={() => console.log("Change pincode")}
+          />
+          {/* ⭐ Price Summary */}
+          <CartSummary cartItems={cart} />
+          <TrustBadges />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CartPage;

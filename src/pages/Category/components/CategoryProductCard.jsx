@@ -114,7 +114,7 @@ const CategoryProductCard = ({
           <img
             src={hoverImage || image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transform transition-all duration-700 group-hover:scale-105"
+            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transform transition-all duration-700 group-hover:scale-105 object-[center_-0%]"
           />
 
           <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-white/85 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm">

@@ -143,7 +143,8 @@ import SizeSelector from "./components/SizeSelector";
 const ProductDetails = () => {
   const { productSlug } = useParams();
   const product = allProducts.find((p) => p.slug === productSlug);
-  const [quantity, setQuantity] = useState(1); // ✅ DEFAULT = 1
+  const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState(null); // ✅ add this
 
   if (!product) {
     return (
@@ -176,9 +177,17 @@ const ProductDetails = () => {
           <SizeSelector
             sizes={["XS", "S", "M", "L", "XL", "2XL"]}
             showGuide={true}
+            selected={selectedSize} // ✅ added
+            onSelect={setSelectedSize} // ✅ added
           />
+
           <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
-          <AddToCartSection product={product} />
+          <AddToCartSection
+            product={product}
+            quantity={quantity}
+            selectedSize={selectedSize} // ✅ added
+          />
+
           <PincodeChecker />
         </div>
       </div>

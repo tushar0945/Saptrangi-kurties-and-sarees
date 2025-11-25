@@ -37,7 +37,7 @@ const MainLayout = ({ children }) => {
     <>
       <Navbar />
       <div className="pt-20">{children}</div>
-      <Footer />
+      <Footer className="lg:block hidden" />
     </>
   );
 };
