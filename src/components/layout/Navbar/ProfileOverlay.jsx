@@ -7,17 +7,22 @@ import {
   Gift,
   Package,
   Tag,
-  Zap,
-  Star,
+  CreditCard,
 } from "lucide-react";
 
+import { Link } from "react-router-dom";
+
 const profileItems = [
-  { label: "My Profile", icon: <User size={16} /> },
-  { label: "Orders", icon: <Package size={16} /> },
-  { label: "Wishlist (32)", icon: <Heart size={16} /> },
-  { label: "Coupons", icon: <Tag size={16} /> },
-  { label: "Gift Cards", icon: <Gift size={16} /> },
-  { label: "Notifications", icon: <Bell size={16} /> },
+  { label: "My Profile", icon: <User size={16} />, link: "/myaccount" },
+  { label: "Orders", icon: <Package size={16} />, link: "/myaccount/orders" },
+  {
+    label: "My Payments",
+    icon: <CreditCard size={16} />,
+    link: "/myaccount/payments",
+  },
+  { label: "Coupons", icon: <Tag size={16} />, link: "/coupons" },
+  { label: "Gift Cards", icon: <Gift size={16} />, link: "/gift-cards" },
+  // { label: "Notifications", icon: <Bell size={16} />, link: "/notifications" },
   { label: "Logout", icon: <LogOut size={16} />, danger: true },
 ];
 
@@ -48,17 +53,20 @@ const ProfileOverlay = ({ open, onClose }) => {
 
         {/* Profile Items */}
         <ul className="mt-4">
-          {profileItems.map((item, index) => (
-            <li
-              key={index}
-              className={`flex items-center gap-3 py-3 border-b cursor-pointer hover:text-primary transition ${
-                item.danger ? "text-red-600 font-medium" : "text-gray-700"
-              }`}
-            >
-              {item.icon}
-              {item.label}
-            </li>
-          ))}
+          {profileItems.map((item, index) => {
+            // All other menu items — clickable links
+            return (
+              <Link
+                key={index}
+                to={item.link}
+                onClick={onClose}
+                className="flex items-center gap-3 py-3 border-b text-gray-700 hover:text-primary transition"
+              >
+                {item.icon}
+                {item.label}
+              </Link>
+            );
+          })}
         </ul>
       </div>
     </div>

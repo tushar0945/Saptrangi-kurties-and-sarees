@@ -398,7 +398,7 @@ const Addresses = () => {
     mode === "edit" ? addresses.find((a) => a.id === addressId) : null;
 
   return (
-    <div className="container mx-auto px-6 py-10">
+    <div className="container mx-auto px-6 ">
       {/* LIST SCREEN */}
       {mode === "list" && (
         <AddressList

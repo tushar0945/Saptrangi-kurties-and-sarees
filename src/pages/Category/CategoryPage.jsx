@@ -409,6 +409,7 @@ import CategorySortBar from "./components/CategorySortBar";
 import CategoryProductCard from "./components/CategoryProductCard";
 import Pagination from "./components/Pagination";
 import MobileFilterDrawer from "./components/MobileFilterDrawer";
+import ProductNotFound from "../../pages/NotFound/ProductNotFound";
 
 const CategoryPage = () => {
   const { categorySlug } = useParams();
@@ -497,7 +498,7 @@ const CategoryPage = () => {
           {/* empty state */}
           {filtered.length === 0 && (
             <div className="mt-12 text-center text-gray-600">
-              No products found.
+              <ProductNotFound />
             </div>
           )}
 

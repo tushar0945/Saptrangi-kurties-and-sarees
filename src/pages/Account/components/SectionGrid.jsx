@@ -26,7 +26,7 @@ const items = [
     desc: "Edit your personal information",
     path: "/myaccount/profile",
   },
-  { title: "Help & Support", desc: "Reach out to us", path: "/account/help" },
+  { title: "Help & Support", desc: "Reach out to us", path: "/myaccount/help" },
 ];
 
 const SectionGrid = () => {

@@ -261,7 +261,7 @@ const AccountPage = ({ children }) => {
      🖥 DESKTOP LAYOUT (unchanged)
      ------------------------------------------------------------------ */
   return (
-    <div className="w-full bg-[#F5F6FA] py-6">
+    <div className="w-full  py-6">
       <div className="max-w-[1400px] mx-auto px-4 flex">
         {/* LEFT SIDEBAR */}
         <div className="w-[280px]">
@@ -271,7 +271,7 @@ const AccountPage = ({ children }) => {
         {/* RIGHT CONTENT */}
         <div className="flex-1 pl-6">
           {children ? (
-            <div className="mt-6">{children}</div>
+            <div className="">{children}</div>
           ) : (
             <>
               {isOverview && <ProfileCard />}
@@ -279,7 +279,7 @@ const AccountPage = ({ children }) => {
               {isOverview ? (
                 <SectionGrid />
               ) : (
-                <div className="mt-6">
+                <div className="">
                   <Outlet />
                 </div>
               )}

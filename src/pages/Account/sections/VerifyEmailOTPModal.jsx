@@ -27,6 +27,7 @@ const VerifyEmailOTPModal = ({
       e.target.value = "";
       return;
     }
+
     e.target.value = val.slice(-1);
     if (idx < OTP_INPUTS - 1) inputsRef.current[idx + 1]?.focus();
   };
@@ -38,24 +39,32 @@ const VerifyEmailOTPModal = ({
 
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl w-[480px] p-6 relative shadow-lg">
+      <div className="bg-white rounded-xl w-[480px] p-6 relative shadow-lg border border-neutral">
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-gray-500"
+          className="absolute right-4 top-4 text-dark/60 hover:text-dark"
         >
           <X size={20} />
         </button>
 
-        <h3 className="text-xl font-semibold mb-4">Verify Your OTP</h3>
-        <div className="border-b border-gray-200 mb-4" />
+        {/* Title */}
+        <h3 className="text-xl font-semibold mb-4 text-dark">
+          Verify Your OTP
+        </h3>
 
-        <p className="text-sm text-gray-700 mb-2">Sent To</p>
+        <div className="border-b border-neutral mb-4" />
+
+        {/* Sent To */}
+        <p className="text-sm text-dark/70 mb-2">Sent To</p>
+
         <input
-          className="w-full border border-gray-200 rounded-md px-3 py-2 mb-4"
+          className="w-full border border-neutral rounded-md px-3 py-2 mb-4 text-dark bg-white outline-none"
           value={email}
           readOnly
         />
 
+        {/* OTP Inputs */}
         <div className="flex gap-3 mb-4">
           {Array.from({ length: OTP_INPUTS }).map((_, i) => (
             <input
@@ -63,19 +72,24 @@ const VerifyEmailOTPModal = ({
               ref={(el) => (inputsRef.current[i] = el)}
               onChange={(e) => handleChange(e, i)}
               maxLength={1}
-              className="w-12 h-12 border border-gray-300 rounded-md text-center text-lg"
+              className="w-12 h-12 border border-neutral rounded-md text-center text-lg outline-none text-dark"
               inputMode="numeric"
             />
           ))}
         </div>
 
-        <button onClick={onResend} className="text-sm text-[#2874f0] mb-4">
+        {/* Resend */}
+        <button
+          onClick={onResend}
+          className="text-sm text-primary hover:underline mb-4"
+        >
           RESEND OTP
         </button>
 
+        {/* Submit Button */}
         <button
           onClick={collectOtp}
-          className="w-full bg-yellow-400 hover:bg-yellow-500 py-3 rounded-lg font-semibold"
+          className="w-full bg-primary hover:bg-secondary py-3 rounded-lg font-semibold text-white transition"
         >
           SUBMIT OTP
         </button>
