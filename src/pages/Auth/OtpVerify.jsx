@@ -210,7 +210,7 @@ const OtpVerify = () => {
     localStorage.removeItem("temp_otp");
     localStorage.removeItem("temp_phone");
 
-    navigate("/myaccount/profile");
+    navigate("/account/profile");
   };
 
   // ===========================
