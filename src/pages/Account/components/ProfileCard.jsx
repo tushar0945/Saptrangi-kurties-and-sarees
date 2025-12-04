@@ -43,7 +43,7 @@ const ProfileCard = () => {
 
       {/* RIGHT BUTTON */}
       <Link
-        to="/myaccount/profile"
+        to="/account/profile"
         className="
           bg-primary hover:bg-secondary 
           px-5 py-2 sm:px-6 sm:py-2.5 
