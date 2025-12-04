@@ -3507,7 +3507,7 @@ const OrderDetails = () => {
           {status === "confirmed" && (
             <>
               <Link
-                to={`/myaccount/orders/${order.id}/cancel`}
+                to={`/account/orders/${order.id}/cancel`}
                 className="flex-1 py-3 border border-gray-300 rounded-lg 
         text-red-500 font-medium text-center"
               >
@@ -3897,7 +3897,7 @@ const OrderDetails = () => {
               </div>
 
               <Link
-                to="/myaccount/payments"
+                to="/account/payments"
                 className="mt-2 text-xs text-primary underline block w-fit"
               >
                 + Add another UPI ID

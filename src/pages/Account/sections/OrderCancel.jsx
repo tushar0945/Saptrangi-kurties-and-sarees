@@ -8,7 +8,7 @@ const OrderCancel = () => {
 
   const handleSubmit = () => {
     // later save reason to backend
-    navigate(`/myaccount/orders/${id}/cancelled`);
+    navigate(`/account/orders/${id}/cancelled`);
   };
 
   return (

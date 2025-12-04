@@ -151,7 +151,7 @@ const PhoneLogin = () => {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-800 text-center">
-          Welcome to SaptRangi 💖
+          Welcome to SaptRangi
         </h2>
         <p className="text-gray-500 text-center mt-1">
           Enter your mobile number to continue
@@ -184,7 +184,7 @@ const PhoneLogin = () => {
             type="submit"
             className="w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold py-3 rounded-2xl shadow-md hover:shadow-lg active:scale-95 transition-all duration-200"
           >
-            Send OTP ✨
+            Send OTP
           </button>
         </form>
 

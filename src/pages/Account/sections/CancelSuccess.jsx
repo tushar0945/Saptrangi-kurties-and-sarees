@@ -12,7 +12,7 @@ const CancelSuccess = () => {
       </div>
 
       <button
-        onClick={() => navigate("/myaccount/orders")}
+        onClick={() => navigate("/account/orders")}
         className="bg-yellow-400 w-full py-3 rounded-lg font-semibold"
       >
         DONE

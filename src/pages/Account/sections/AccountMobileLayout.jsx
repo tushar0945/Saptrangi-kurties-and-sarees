@@ -9,8 +9,8 @@
 
 // const AccountMobileLayout = () => {
 //   const sections = [
-//     { title: "My Addresses", link: "/myaccount/addresses" },
-//     { title: "Help & Support", link: "/myaccount/help" },
+//     { title: " Addresses", link: "/account/addresses" },
+//     { title: "Help & Support", link: "/account/help" },
 //   ];
 
 //   return (
@@ -30,7 +30,7 @@
 
 //         {/* Edit Profile Link */}
 //         <Link
-//           to="/myaccount/profile"
+//           to="/account/profile"
 //           className="mt-4 w-full bg-yellow-500 text-white py-2 rounded-xl font-semibold
 //                      hover:bg-yellow-600 active:scale-95 block text-center"
 //         >
@@ -42,7 +42,7 @@
 //       <div className="bg-white rounded-2xl shadow-sm p-4 mb-5">
 //         <div className="grid grid-cols-3 text-center gap-3">
 //           <Link
-//             to="/myaccount/orders"
+//             to="/account/orders"
 //             className="flex flex-col items-center gap-2"
 //           >
 //             <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
@@ -52,7 +52,7 @@
 //           </Link>
 
 //           <Link
-//             to="/myaccount/wallet"
+//             to="/account/wallet"
 //             className="flex flex-col items-center gap-2"
 //           >
 //             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
@@ -62,7 +62,7 @@
 //           </Link>
 
 //           <Link
-//             to="/myaccount/payments"
+//             to="/account/payments"
 //             className="flex flex-col items-center gap-2"
 //           >
 //             <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
@@ -108,8 +108,8 @@ import {
 
 const AccountMobileLayout = () => {
   const sections = [
-    { title: "My Addresses", link: "/myaccount/addresses" },
-    { title: "Help & Support", link: "/myaccount/help" },
+    { title: " Addresses", link: "/account/addresses" },
+    { title: "Help & Support", link: "/account/help" },
   ];
 
   return (
@@ -130,7 +130,7 @@ const AccountMobileLayout = () => {
 
         {/* Edit Profile */}
         <Link
-          to="/myaccount/profile"
+          to="/account/profile"
           className="mt-4 w-full bg-white text-dark py-2 rounded-xl font-semibold
           active:scale-95 block text-center shadow-sm"
         >
@@ -143,7 +143,7 @@ const AccountMobileLayout = () => {
         <div className="grid grid-cols-3 text-center gap-3">
           {/* Orders */}
           <Link
-            to="/myaccount/orders"
+            to="/account/orders"
             className="flex flex-col items-center gap-2"
           >
             <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
@@ -154,7 +154,7 @@ const AccountMobileLayout = () => {
 
           {/* Wallet */}
           <Link
-            to="/myaccount/wallet"
+            to="/account/wallet"
             className="flex flex-col items-center gap-2"
           >
             <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
@@ -165,7 +165,7 @@ const AccountMobileLayout = () => {
 
           {/* Payments */}
           <Link
-            to="/myaccount/payments"
+            to="/account/payments"
             className="flex flex-col items-center gap-2"
           >
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">

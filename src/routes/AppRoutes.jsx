@@ -181,7 +181,7 @@ function App() {
 
       {/* MAIN ACCOUNT ROUTES */}
       <Route
-        path="/myaccount"
+        path="/account"
         element={
           <PrivateRoute>
             <AccountPage />

@@ -322,7 +322,7 @@ const OtpVerify = () => {
             className="w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold py-3 rounded-2xl shadow-md 
             hover:shadow-lg active:scale-95 transition-all duration-200"
           >
-            Verify OTP ✨
+            Verify OTP
           </button>
         </form>
 

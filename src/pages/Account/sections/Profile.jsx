@@ -835,6 +835,7 @@ import React, { useState } from "react";
 import { Calendar } from "lucide-react";
 import { useAuth } from "../../../context/AuthContext";
 import { AuthService } from "../../../services/authService";
+import { useNavigate } from "react-router-dom";
 
 import VerifyEmailModal from "./VerifyEmailModal";
 import VerifyEmailOTPModal from "./VerifyEmailOTPModal";
@@ -844,6 +845,7 @@ import SuccessModal from "./SuccessModal";
 
 const Profile = () => {
   const { user, token, login } = useAuth();
+  const navigate = useNavigate();
 
   // Load initial data from logged-in user
   const [email, setEmail] = useState(user?.email || "");
@@ -1152,7 +1154,10 @@ const Profile = () => {
       <SuccessModal
         open={showSuccess}
         message={isFirstTime ? "Profile Saved!" : "Changes Saved Successfully!"}
-        onClose={() => setShowSuccess(false)}
+        onClose={() => {
+          setShowSuccess(false);
+          navigate("/"); // redirect to home
+        }}
       />
     </div>
   );

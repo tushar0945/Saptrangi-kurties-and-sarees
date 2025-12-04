@@ -2,31 +2,31 @@ import { useNavigate } from "react-router-dom";
 
 const items = [
   {
-    title: "My Orders",
+    title: "Orders",
     desc: "View, modify and track orders",
-    path: "/myaccount/orders",
+    path: "/account/orders",
   },
   {
-    title: "My Payments",
+    title: "Payments",
     desc: "Manage payment methods",
-    path: "/myaccount/payments",
+    path: "/account/payments",
   },
   {
-    title: "My Wallet",
+    title: "Wallet",
     desc: "Check wallet balance and gift cards",
-    path: "/myaccount/wallet",
+    path: "/account/wallet",
   },
   {
-    title: "My Addresses",
+    title: "Addresses",
     desc: "Add or remove saved addresses",
-    path: "/myaccount/addresses",
+    path: "/account/addresses",
   },
   {
-    title: "My Profile",
+    title: "Profile",
     desc: "Edit your personal information",
-    path: "/myaccount/profile",
+    path: "/account/profile",
   },
-  { title: "Help & Support", desc: "Reach out to us", path: "/myaccount/help" },
+  { title: "Help & Support", desc: "Reach out to us", path: "/account/help" },
 ];
 
 const SectionGrid = () => {

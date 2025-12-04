@@ -120,11 +120,14 @@ import AdminLogin from "./admin/pages/AdminLogin";
 import { AuthProvider } from "./context/AuthContext";
 import { AdminAuthProvider } from "./context/AdminAuthContext";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <AuthProvider>
       <AdminAuthProvider>
         <Router>
+          <ScrollToTop />
           <Routes>
             {/*  ADMIN LOGIN ROUTE (separate)  */}
             <Route path="/admin-login" element={<AdminLogin />} />

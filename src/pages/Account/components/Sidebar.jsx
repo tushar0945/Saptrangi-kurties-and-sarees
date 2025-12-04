@@ -12,11 +12,11 @@ import {
 
 const Sidebar = () => {
   const menu = [
-    { label: "Overview", path: "/myaccount", icon: LayoutGrid },
-    { label: "My Orders", path: "/myaccount/orders", icon: Package },
-    { label: "My Payments", path: "/myaccount/payments", icon: CreditCard },
-    { label: "My Addresses", path: "/myaccount/addresses", icon: MapPin },
-    { label: "My Profile", path: "/myaccount/profile", icon: User },
+    { label: "Overview", path: "/account", icon: LayoutGrid },
+    { label: "Orders", path: "/account/orders", icon: Package },
+    { label: "Payments", path: "/account/payments", icon: CreditCard },
+    { label: "Addresses", path: "/account/addresses", icon: MapPin },
+    { label: "Profile", path: "/account/profile", icon: User },
   ];
 
   return (
@@ -26,7 +26,7 @@ const Sidebar = () => {
           <NavLink
             key={item.path}
             to={item.path}
-            end={item.path === "/myaccount"}
+            end={item.path === "/account"}
             className={({ isActive }) =>
               `
               relative flex items-center gap-3 py-2 text-[16px] font-medium

@@ -371,7 +371,7 @@ const AddressList = ({ addresses, onDeleteAddress }) => {
             <div className="flex gap-4 mt-6">
               <button
                 onClick={() =>
-                  navigate(`/myaccount/addresses?address-id=${addr.id}`)
+                  navigate(`/account/addresses?address-id=${addr.id}`)
                 }
                 className="flex-1 border border-primary rounded-lg py-2 font-semibold text-primary hover:bg-primary/10 transition"
               >
@@ -392,7 +392,7 @@ const AddressList = ({ addresses, onDeleteAddress }) => {
       {/* ADD NEW ADDRESS BUTTON */}
       <div className="flex justify-center mt-10">
         <button
-          onClick={() => navigate("/myaccount/addresses?address-id=new")}
+          onClick={() => navigate("/account/addresses?address-id=new")}
           className="bg-primary hover:bg-secondary px-12 py-3 rounded-lg font-semibold text-white transition"
         >
           ADD NEW ADDRESS

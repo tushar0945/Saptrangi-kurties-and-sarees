@@ -525,7 +525,7 @@ const HomeProductCard = ({
   slug,
   image,
   hoverImage,
-  title,
+  name,
   price,
   oldPrice,
   rating,
@@ -549,7 +549,7 @@ const HomeProductCard = ({
           {/* MAIN IMAGE */}
           <img
             src={image}
-            alt={title}
+            alt={"title"}
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover
              transition-opacity duration-500
@@ -559,7 +559,7 @@ const HomeProductCard = ({
           {/* HOVER IMAGE (with zoom) */}
           <img
             src={hoverImage || image}
-            alt={title}
+            alt={"title"}
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover
              opacity-0 group-hover:opacity-100
@@ -587,7 +587,7 @@ const HomeProductCard = ({
           </h3>
 
           <p className="text-[12px] md:text-[13px] text-gray-900 font-medium leading-tight line-clamp-2">
-            {title}
+            {name}
           </p>
 
           <div className="flex items-center gap-2 mt-1">

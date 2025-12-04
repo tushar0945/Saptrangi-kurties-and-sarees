@@ -238,7 +238,7 @@ const AccountPage = ({ children }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isOverview = pathname === "/myaccount";
+  const isOverview = pathname === "/account";
 
   /* ------------------------------------------------------------------
      📱 MOBILE LAYOUT — open subpages as FULL SEPARATE PAGES

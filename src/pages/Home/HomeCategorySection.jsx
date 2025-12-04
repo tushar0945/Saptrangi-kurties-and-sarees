@@ -2,6 +2,7 @@ import React from "react";
 import HomeProductList from "./HomeProductList";
 
 const HomeCategorySection = ({ bannerImage, title, products }) => {
+  console.log("Data", products);
   return (
     <section className="my-2">
       {/* Banner */}

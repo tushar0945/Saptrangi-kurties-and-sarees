@@ -13,12 +13,12 @@ import {
 import { Link } from "react-router-dom";
 
 const profileItems = [
-  { label: "My Profile", icon: <User size={16} />, link: "/myaccount" },
-  { label: "Orders", icon: <Package size={16} />, link: "/myaccount/orders" },
+  { label: "Profile", icon: <User size={16} />, link: "/account" },
+  { label: "Orders", icon: <Package size={16} />, link: "/account/orders" },
   {
-    label: "My Payments",
+    label: "Payments",
     icon: <CreditCard size={16} />,
-    link: "/myaccount/payments",
+    link: "account/payments",
   },
   { label: "Coupons", icon: <Tag size={16} />, link: "/coupons" },
   { label: "Gift Cards", icon: <Gift size={16} />, link: "/gift-cards" },

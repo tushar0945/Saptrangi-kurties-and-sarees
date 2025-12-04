@@ -37,7 +37,6 @@ const NavbarMenu = () => {
         { label: "Straight Cut", slug: "infants" },
       ],
     },
-    { title: "HOME" },
   ];
 
   // Close if clicked outside

@@ -119,3 +119,92 @@ const Home = () => {
 };
 
 export default Home;
+
+// import React, { useEffect, useState } from "react";
+// import HomeCarousel from "./HomeCarousel";
+// import HomeHeading from "./HomeHeading";
+// import HomeTopPicList from "./HomeTopPicList";
+// import HomeCategorySection from "./HomeCategorySection";
+
+// const Home = () => {
+//   const [carousel, setCarousel] = useState([]);
+//   const [topPicks, setTopPicks] = useState([]);
+//   const [categories, setCategories] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     fetch("https://saptrangi-backend.onrender.com/products/overall/") // Replace with your API URL
+//       .then((res) => res.json())
+//       .then((data) => {
+//         console.log("API DATA:", data);
+
+//         // Carousel (your current API has empty array)
+//         setCarousel(data.carousel || []);
+
+//         // Top Picks → filter products
+//         const top = data.product.filter((p) => p.top_picks === true);
+//         setTopPicks(top);
+
+//         // Category-wise groups
+//         const grouped = {};
+
+//         data.product.forEach((p) => {
+//           console.log(p);
+//           if (!grouped[p.category]) {
+//             grouped[p.category] = {
+//               title: p.name,
+//               categorySlug: p.category.toLowerCase(),
+//               bannerImage: p.product_images[0], // You can customize
+//               products: [],
+//             };
+//           }
+//           grouped[p.category].products.push(p);
+//         });
+
+//         setCategories(Object.values(grouped));
+
+//         setLoading(false);
+//       })
+//       .catch((err) => {
+//         console.log("Error fetching home data:", err);
+//         setLoading(false);
+//       });
+//   }, []);
+
+//   if (loading) {
+//     return (
+//       <div className="min-h-screen flex items-center justify-center text-xl">
+//         Loading...
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="bg-neutral min-h-screen w-full">
+//       {/* Carousel */}
+//       <HomeCarousel
+//         desktopBanners={carousel} // API does not provide mobile/desktop separation
+//         mobileBanners={carousel}
+//       />
+
+//       <div className="max-w-[1400px] mx-auto px-3 sm:px-4 md:px-4 lg:px-10">
+//         {/* Top Picks */}
+//         <HomeHeading title="Top Picks" />
+//         <HomeTopPicList products={topPicks} />
+
+//         {/* Categories */}
+//         {categories.map((cat, index) => (
+//           <HomeCategorySection
+//             key={index}
+//             bannerImage={cat.bannerImage}
+//             title={cat.title}
+//             products={cat.products}
+//             categorySlug={cat.categorySlug}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;

@@ -147,19 +147,19 @@ const NavbarProfile = ({ onClick }) => {
 
   const profileItems = [
     {
-      label: "My Account",
+      label: "Account",
       icon: <User size={16} />,
-      path: "/myaccount",
+      path: "/account",
     },
     {
       label: "Orders",
       icon: <Package size={16} />,
-      path: "/myaccount/orders",
+      path: "/account/orders",
     },
     {
-      label: "My Payments",
+      label: "Payments",
       icon: <CreditCard size={16} />,
-      path: "/myaccount/payments",
+      path: "/account/payments",
     },
     { label: "Coupons", icon: <Tag size={16} />, path: "/coupons" },
     { label: "Gift Cards", icon: <Gift size={16} />, path: "/gift-cards" },
@@ -222,7 +222,7 @@ const NavbarProfile = ({ onClick }) => {
 
       {/* Mobile */}
       <button
-        onClick={() => navigate(token ? "/myaccount" : "/login")}
+        onClick={() => navigate(token ? "/account" : "/login")}
         className="block md:hidden p-2 rounded-md bg-secondary hover:bg-primary transition text-white"
       >
         <User size={22} />

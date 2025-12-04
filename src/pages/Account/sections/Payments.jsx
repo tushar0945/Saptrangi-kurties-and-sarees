@@ -772,7 +772,7 @@ const Payments = () => {
 
   return (
     <div className="bg-white p-6 rounded-xl border border-neutral shadow-sm w-full">
-      <h1 className="text-xl font-bold text-dark mb-6">My Payments</h1>
+      <h1 className="text-xl font-bold text-dark mb-6">Payments</h1>
 
       {/* --------------------------- */}
       {/* 🔶 Debit & Credit Cards */}

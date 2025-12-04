@@ -88,7 +88,7 @@
 // //   // Add new address
 // //   const handleAddAddress = (newAddress) => {
 // //     setAddresses((prev) => [...prev, newAddress]);
-// //     navigate("/myaccount/addresses");
+// //     navigate("/account/addresses");
 // //   };
 
 // //   // Delete address
@@ -106,7 +106,7 @@
 // //     <div className="container mx-auto px-6 py-10">
 // //       {/* title */}
 // //       <div className="bg-white p-6 rounded-xl shadow">
-// //         <h1 className="text-2xl font-semibold">My Addresses</h1>
+// //         <h1 className="text-2xl font-semibold"> Addresses</h1>
 // //         <p className="text-gray-600 mt-2">
 // //           Add, edit, or remove saved addresses.
 // //         </p>
@@ -118,13 +118,13 @@
 // //           <div className="bg-white rounded-lg p-6 border">
 // //             <ul className="space-y-4">
 // //               <li className="text-gray-800 font-medium">Overview</li>
-// //               <li className="text-gray-600">My Orders</li>
-// //               <li className="text-gray-600">My Payments</li>
-// //               <li className="text-gray-600">My Wallet</li>
+// //               <li className="text-gray-600"> Orders</li>
+// //               <li className="text-gray-600"> Payments</li>
+// //               <li className="text-gray-600"> Wallet</li>
 // //               <li className="text-blue-600 border-b-2 border-blue-100 pb-2">
-// //                 My Addresses
+// //                  Addresses
 // //               </li>
-// //               <li className="text-gray-600">My Profile</li>
+// //               <li className="text-gray-600"> Profile</li>
 // //               <li className="text-red-500">Logout</li>
 // //             </ul>
 // //           </div>
@@ -179,7 +179,7 @@
 // //   // Add address
 // //   const handleAddAddress = (newAddress) => {
 // //     setAddresses((prev) => [...prev, newAddress]);
-// //     navigate("/myaccount/addresses");
+// //     navigate("/account/addresses");
 // //   };
 
 // //   // Update existing address
@@ -189,7 +189,7 @@
 // //         addr.id === updatedAddress.id ? updatedAddress : addr
 // //       )
 // //     );
-// //     navigate("/myaccount/addresses");
+// //     navigate("/account/addresses");
 // //   };
 
 // //   // Delete address
@@ -266,7 +266,7 @@
 //   // ---------------------
 //   const handleAddAddress = (newAddress) => {
 //     setAddresses((prev) => [...prev, newAddress]);
-//     navigate("/myaccount/addresses");
+//     navigate("/account/addresses");
 //   };
 
 //   // ---------------------
@@ -276,7 +276,7 @@
 //     setAddresses((prev) =>
 //       prev.map((addr) => (addr.id === updated.id ? updated : addr))
 //     );
-//     navigate("/myaccount/addresses");
+//     navigate("/account/addresses");
 //   };
 
 //   // ---------------------
@@ -329,6 +329,100 @@
 // export default Addresses;
 
 // src/pages/Account/sections/Addresses.jsx
+// import React, { useMemo, useState } from "react";
+// import { useSearchParams, useNavigate } from "react-router-dom";
+// import AddressList from "./AddressList";
+// import AddAddressForm from "./AddAddressForm";
+// import EditAddressForm from "./EditAddressForm";
+
+// const Addresses = () => {
+//   const [searchParams] = useSearchParams();
+//   const addressId = searchParams.get("address-id");
+
+//   const navigate = useNavigate();
+
+//   // ---------------------
+//   // ADDRESS STATE
+//   // ---------------------
+//   const [addresses, setAddresses] = useState([
+//     {
+//       id: "692620f12e7e35cd229da8ec",
+//       label: "Other",
+//       name: "Tushar Patil",
+//       street: "TALWADE Bk, erw",
+//       city: "Nandurbar",
+//       state: "Maharashtra",
+//       pincode: "425412",
+//       mobile: "8999197992",
+//       area: "some area",
+//       landmark: "none",
+//     },
+//   ]);
+
+//   // ---------------------
+//   // ADD ADDRESS
+//   // ---------------------
+//   const handleAddAddress = (newAddress) => {
+//     setAddresses((prev) => [...prev, newAddress]);
+//     navigate("/account/addresses");
+//   };
+
+//   // ---------------------
+//   // UPDATE ADDRESS
+//   // ---------------------
+//   const handleUpdateAddress = (updatedAddress) => {
+//     setAddresses((prev) =>
+//       prev.map((a) => (a.id === updatedAddress.id ? updatedAddress : a))
+//     );
+//     navigate("/account/addresses");
+//   };
+
+//   // ---------------------
+//   // DELETE ADDRESS
+//   // ---------------------
+//   const handleDeleteAddress = (id) => {
+//     setAddresses((prev) => prev.filter((a) => a.id !== id));
+//   };
+
+//   // ---------------------
+//   // SELECT MODE
+//   // ---------------------
+//   const mode = useMemo(() => {
+//     if (!addressId) return "list";
+//     if (addressId === "new") return "new";
+//     return "edit";
+//   }, [addressId]);
+
+//   // If edit → find the address
+//   const selectedAddress =
+//     mode === "edit" ? addresses.find((a) => a.id === addressId) : null;
+
+//   return (
+//     <div className="container mx-auto px-6 ">
+//       {/* LIST SCREEN */}
+//       {mode === "list" && (
+//         <AddressList
+//           addresses={addresses}
+//           onDeleteAddress={handleDeleteAddress}
+//         />
+//       )}
+
+//       {/* ADD NEW SCREEN */}
+//       {mode === "new" && <AddAddressForm onAddAddress={handleAddAddress} />}
+
+//       {/* EDIT SCREEN */}
+//       {mode === "edit" && (
+//         <EditAddressForm
+//           addressData={selectedAddress}
+//           onUpdateAddress={handleUpdateAddress}
+//         />
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Addresses;
+
 import React, { useMemo, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import AddressList from "./AddressList";
@@ -345,18 +439,18 @@ const Addresses = () => {
   // ADDRESS STATE
   // ---------------------
   const [addresses, setAddresses] = useState([
-    {
-      id: "692620f12e7e35cd229da8ec",
-      label: "Other",
-      name: "Tushar Patil",
-      street: "TALWADE Bk, erw",
-      city: "Nandurbar",
-      state: "Maharashtra",
-      pincode: "425412",
-      mobile: "8999197992",
-      area: "some area",
-      landmark: "none",
-    },
+    // {
+    //   id: "692620f12e7e35cd229da8ec",
+    //   label: "Other",
+    //   name: "Tushar Patil",
+    //   street: "TALWADE Bk, erw",
+    //   city: "Nandurbar",
+    //   state: "Maharashtra",
+    //   pincode: "425412",
+    //   mobile: "8999197992",
+    //   area: "some area",
+    //   landmark: "none",
+    // },
   ]);
 
   // ---------------------
@@ -364,7 +458,7 @@ const Addresses = () => {
   // ---------------------
   const handleAddAddress = (newAddress) => {
     setAddresses((prev) => [...prev, newAddress]);
-    navigate("/myaccount/addresses");
+    navigate("/account/addresses");
   };
 
   // ---------------------
@@ -374,7 +468,7 @@ const Addresses = () => {
     setAddresses((prev) =>
       prev.map((a) => (a.id === updatedAddress.id ? updatedAddress : a))
     );
-    navigate("/myaccount/addresses");
+    navigate("/account/addresses");
   };
 
   // ---------------------
@@ -398,19 +492,55 @@ const Addresses = () => {
     mode === "edit" ? addresses.find((a) => a.id === addressId) : null;
 
   return (
-    <div className="container mx-auto px-6 ">
-      {/* LIST SCREEN */}
+    <div className="container mx-auto px-6">
+      {/* ===========================
+          LIST SCREEN 
+      ============================ */}
       {mode === "list" && (
-        <AddressList
-          addresses={addresses}
-          onDeleteAddress={handleDeleteAddress}
-        />
+        <>
+          {/* EMPTY — Show Add Address Box */}
+          {addresses.length === 0 && (
+            <div className="flex justify-center pt-8">
+              <div
+                onClick={() => navigate("/account/addresses?address-id=new")}
+                className="
+                  w-full max-w-sm
+                  h-52
+                  border-2 border-dashed border-gray-300
+                  rounded-xl
+                  flex flex-col items-center justify-center
+                  cursor-pointer
+                  bg-white
+                  hover:border-pink-500
+                  transition
+                "
+              >
+                <div className="text-pink-600 text-4xl font-light">+</div>
+                <p className="text-pink-600 font-semibold mt-2 text-sm tracking-wide">
+                  ADD NEW ADDRESS
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* FILLED — Show Address List */}
+          {addresses.length > 0 && (
+            <AddressList
+              addresses={addresses}
+              onDeleteAddress={handleDeleteAddress}
+            />
+          )}
+        </>
       )}
 
-      {/* ADD NEW SCREEN */}
+      {/* ===========================
+          ADD NEW SCREEN
+      ============================ */}
       {mode === "new" && <AddAddressForm onAddAddress={handleAddAddress} />}
 
-      {/* EDIT SCREEN */}
+      {/* ===========================
+          EDIT SCREEN
+      ============================ */}
       {mode === "edit" && (
         <EditAddressForm
           addressData={selectedAddress}

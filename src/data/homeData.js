@@ -56,7 +56,7 @@
 //   list.map((product, index) => ({
 //     ...product,
 //     id: `${prefix}-${index + 1}`,
-//     slug: slugify(product.title),
+//     slug: slugify(product.name),
 //   }));
 
 // // -------------------------------------------------------
@@ -66,7 +66,7 @@
 //   {
 //     image: k1,
 //     hoverImage: k1h,
-//     title: "Peach Kurti",
+//     name: "Peach Kurti",
 //     price: 1299,
 //     oldPrice: 1999,
 //     rating: 4.6,
@@ -74,7 +74,7 @@
 //   {
 //     image: k2,
 //     hoverImage: k2h,
-//     title:
+//     name:
 //       "Special panjab imported dashing stylish Grey Kurti dashing stylish Grey Kurti",
 //     price: 1399,
 //     oldPrice: 2199,
@@ -83,7 +83,7 @@
 //   {
 //     image: k3,
 //     hoverImage: k3h,
-//     title: "Yellow Kurti",
+//     name: "Yellow Kurti",
 //     price: 1199,
 //     oldPrice: 1799,
 //     rating: 4.7,
@@ -91,7 +91,7 @@
 //   {
 //     image: k4,
 //     hoverImage: k4h, // No hover available
-//     title: "Mint Kurti",
+//     name: "Mint Kurti",
 //     price: 1499,
 //     oldPrice: 1899,
 //     rating: 4.8,
@@ -99,7 +99,7 @@
 //   {
 //     image: k1,
 //     hoverImage: k1h,
-//     title: "Peach Kurti",
+//     name: "Peach Kurti",
 //     price: 1299,
 //     oldPrice: 1999,
 //     rating: 4.6,
@@ -107,7 +107,7 @@
 //   {
 //     image: k2,
 //     hoverImage: k2h,
-//     title: "Grey Kurti",
+//     name: "Grey Kurti",
 //     price: 1399,
 //     oldPrice: 2199,
 //     rating: 4.5,
@@ -115,7 +115,7 @@
 //   {
 //     image: k3,
 //     hoverImage: k3h,
-//     title: "Yellow Kurti",
+//     name: "Yellow Kurti",
 //     price: 1199,
 //     oldPrice: 1799,
 //     rating: 4.7,
@@ -123,7 +123,7 @@
 //   {
 //     image: k4,
 //     hoverImage: null,
-//     title: "Mint Kurti",
+//     name: "Mint Kurti",
 //     price: 1499,
 //     oldPrice: 1899,
 //     rating: 4.8,
@@ -134,7 +134,7 @@
 //   {
 //     image: s1,
 //     hoverImage: s11,
-//     title: "Banarasi Saree",
+//     name: "Banarasi Saree",
 //     price: 2499,
 //     oldPrice: 3599,
 //     rating: 4.7,
@@ -142,7 +142,7 @@
 //   {
 //     image: s2,
 //     hoverImage: s22,
-//     title: "Bridal Saree",
+//     name: "Bridal Saree",
 //     price: 2999,
 //     oldPrice: 3999,
 //     rating: 4.8,
@@ -150,7 +150,7 @@
 //   {
 //     image: s3,
 //     hoverImage: s33,
-//     title: "Printed Saree",
+//     name: "Printed Saree",
 //     price: 1499,
 //     oldPrice: 1999,
 //     rating: 4.5,
@@ -158,7 +158,7 @@
 //   {
 //     image: s4,
 //     hoverImage: s44,
-//     title: "Silk Saree",
+//     name: "Silk Saree",
 //     price: 3299,
 //     oldPrice: 4599,
 //     rating: 4.9,
@@ -166,7 +166,7 @@
 //   {
 //     image: s5,
 //     hoverImage: s55,
-//     title: "Banarasi Saree",
+//     name: "Banarasi Saree",
 //     price: 2499,
 //     oldPrice: 3599,
 //     rating: 4.7,
@@ -174,7 +174,7 @@
 //   {
 //     image: s1,
 //     hoverImage: s11,
-//     title: "Bridal Saree",
+//     name: "Bridal Saree",
 //     price: 2999,
 //     oldPrice: 3999,
 //     rating: 4.8,
@@ -182,7 +182,7 @@
 //   {
 //     image: s2,
 //     hoverImage: s22,
-//     title: "Printed Saree",
+//     name: "Printed Saree",
 //     price: 1499,
 //     oldPrice: 1999,
 //     rating: 4.5,
@@ -190,7 +190,7 @@
 //   {
 //     image: s3,
 //     hoverImage: s33,
-//     title: "Silk Saree",
+//     name: "Silk Saree",
 //     price: 3299,
 //     oldPrice: 4599,
 //     rating: 4.9,
@@ -201,7 +201,7 @@
 //   {
 //     image: l1,
 //     hoverImage: l1h,
-//     title: "Black Hoodie",
+//     name: "Black Hoodie",
 //     price: 899,
 //     oldPrice: 1899,
 //     rating: 4.5,
@@ -209,7 +209,7 @@
 //   {
 //     image: l2,
 //     hoverImage: l2h,
-//     title: "Printed Hoodie",
+//     name: "Printed Hoodie",
 //     price: 999,
 //     oldPrice: 2099,
 //     rating: 4.6,
@@ -217,7 +217,7 @@
 //   {
 //     image: l3,
 //     hoverImage: l3h,
-//     title: "Zipper Hoodie",
+//     name: "Zipper Hoodie",
 //     price: 1199,
 //     oldPrice: 2499,
 //     rating: 4.4,
@@ -225,7 +225,7 @@
 //   {
 //     image: l4,
 //     hoverImage: l4h,
-//     title: "Oversized Hoodie",
+//     name: "Oversized Hoodie",
 //     price: 1499,
 //     oldPrice: 2999,
 //     rating: 4.7,
@@ -233,7 +233,7 @@
 //   {
 //     image: l5,
 //     hoverImage: l5h,
-//     title: "Black Hoodie",
+//     name: "Black Hoodie",
 //     price: 899,
 //     oldPrice: 1899,
 //     rating: 4.5,
@@ -241,7 +241,7 @@
 //   {
 //     image: l1,
 //     hoverImage: l1h,
-//     title: "Printed Hoodie",
+//     name: "Printed Hoodie",
 //     price: 999,
 //     oldPrice: 2099,
 //     rating: 4.6,
@@ -249,7 +249,7 @@
 //   {
 //     image: l3,
 //     hoverImage: l3h,
-//     title: "Zipper Hoodie",
+//     name: "Zipper Hoodie",
 //     price: 1199,
 //     oldPrice: 2499,
 //     rating: 4.4,
@@ -257,7 +257,7 @@
 //   {
 //     image: l4,
 //     hoverImage: l4h,
-//     title: "Oversized Hoodie",
+//     name: "Oversized Hoodie",
 //     price: 1499,
 //     oldPrice: 2999,
 //     rating: 4.7,
@@ -288,19 +288,19 @@
 
 //   categories: [
 //     {
-//       title: "Designer Sarees",
+//       name: "Designer Sarees",
 //       categorySlug: "designer-sarees",
 //       bannerImage: sareeBanner,
 //       products: sarees,
 //     },
 //     {
-//       title: "Designer Kurtis",
+//       name: "Designer Kurtis",
 //       categorySlug: "designer-kurtis",
 //       bannerImage: kurtisBanner,
 //       products: kurtis,
 //     },
 //     {
-//       title: "Stylish Lehengas",
+//       name: "Stylish Lehengas",
 //       categorySlug: "stylish-lehengas",
 //       bannerImage: lehengaBanner,
 //       products: lehengas,
@@ -366,7 +366,7 @@ const addMeta = (list, prefix) =>
   list.map((product, index) => ({
     ...product,
     id: `${prefix}-${index + 1}`,
-    slug: slugify(product.title),
+    slug: slugify(product.name),
   }));
 
 // -------------------------------------------------------
@@ -380,7 +380,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Peach Kurti",
+    name: "Peach Kurti",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
@@ -408,7 +408,7 @@ const rawKurtis = [
       {
         name: "Golu Chauhan",
         stars: 4,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -417,7 +417,7 @@ const rawKurtis = [
       {
         name: "Nita Ambani",
         stars: 5,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -426,7 +426,7 @@ const rawKurtis = [
       {
         name: "Radha Ambani",
         stars: 2,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -446,7 +446,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Grey Imported Kurti",
+    name: "Grey Imported Kurti",
     price: 1399,
     oldPrice: 2199,
     rating: 4.5,
@@ -487,7 +487,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Yellow Kurti",
+    name: "Yellow Kurti",
     price: 1199,
     oldPrice: 1799,
     rating: 4.7,
@@ -521,7 +521,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Mint Kurti",
+    name: "Mint Kurti",
     price: 1499,
     oldPrice: 1899,
     rating: 4.8,
@@ -549,7 +549,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Peach Kurti",
+    name: "Peach Kurti",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
@@ -577,7 +577,7 @@ const rawKurtis = [
       {
         name: "Golu Chauhan",
         stars: 4,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -586,7 +586,7 @@ const rawKurtis = [
       {
         name: "Nita Ambani",
         stars: 5,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -595,7 +595,7 @@ const rawKurtis = [
       {
         name: "Radha Ambani",
         stars: 2,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -615,7 +615,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Grey Imported Kurti",
+    name: "Grey Imported Kurti",
     price: 1399,
     oldPrice: 2199,
     rating: 4.5,
@@ -656,7 +656,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Yellow Kurti",
+    name: "Yellow Kurti",
     price: 1199,
     oldPrice: 1799,
     rating: 4.7,
@@ -690,7 +690,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Mint Kurti",
+    name: "Mint Kurti",
     price: 1499,
     oldPrice: 1899,
     rating: 4.8,
@@ -718,7 +718,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Peach Kurti",
+    name: "Peach Kurti",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
@@ -746,7 +746,7 @@ const rawKurtis = [
       {
         name: "Golu Chauhan",
         stars: 4,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -755,7 +755,7 @@ const rawKurtis = [
       {
         name: "Nita Ambani",
         stars: 5,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -764,7 +764,7 @@ const rawKurtis = [
       {
         name: "Radha Ambani",
         stars: 2,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -784,7 +784,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Grey Imported Kurti",
+    name: "Grey Imported Kurti",
     price: 1399,
     oldPrice: 2199,
     rating: 4.5,
@@ -825,7 +825,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Yellow Kurti",
+    name: "Yellow Kurti",
     price: 1199,
     oldPrice: 1799,
     rating: 4.7,
@@ -859,7 +859,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Mint Kurti",
+    name: "Mint Kurti",
     price: 1499,
     oldPrice: 1899,
     rating: 4.8,
@@ -887,7 +887,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Peach Kurti",
+    name: "Peach Kurti",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
@@ -915,7 +915,7 @@ const rawKurtis = [
       {
         name: "Golu Chauhan",
         stars: 4,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -924,7 +924,7 @@ const rawKurtis = [
       {
         name: "Nita Ambani",
         stars: 5,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -933,7 +933,7 @@ const rawKurtis = [
       {
         name: "Radha Ambani",
         stars: 2,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -953,7 +953,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Grey Imported Kurti",
+    name: "Grey Imported Kurti",
     price: 1399,
     oldPrice: 2199,
     rating: 4.5,
@@ -994,7 +994,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Yellow Kurti",
+    name: "Yellow Kurti",
     price: 1199,
     oldPrice: 1799,
     rating: 4.7,
@@ -1028,7 +1028,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Mint Kurti",
+    name: "Mint Kurti",
     price: 1499,
     oldPrice: 1899,
     rating: 4.8,
@@ -1056,7 +1056,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Peach Kurti",
+    name: "Peach Kurti",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
@@ -1084,7 +1084,7 @@ const rawKurtis = [
       {
         name: "Golu Chauhan",
         stars: 4,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -1093,7 +1093,7 @@ const rawKurtis = [
       {
         name: "Nita Ambani",
         stars: 5,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -1102,7 +1102,7 @@ const rawKurtis = [
       {
         name: "Radha Ambani",
         stars: 2,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -1122,7 +1122,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Grey Imported Kurti",
+    name: "Grey Imported Kurti",
     price: 1399,
     oldPrice: 2199,
     rating: 4.5,
@@ -1163,7 +1163,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Yellow Kurti",
+    name: "Yellow Kurti",
     price: 1199,
     oldPrice: 1799,
     rating: 4.7,
@@ -1197,7 +1197,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Mint Kurti",
+    name: "Mint Kurti",
     price: 1499,
     oldPrice: 1899,
     rating: 4.8,
@@ -1225,7 +1225,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Peach Kurti",
+    name: "Peach Kurti",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
@@ -1253,7 +1253,7 @@ const rawKurtis = [
       {
         name: "Golu Chauhan",
         stars: 4,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -1262,7 +1262,7 @@ const rawKurtis = [
       {
         name: "Nita Ambani",
         stars: 5,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -1271,7 +1271,7 @@ const rawKurtis = [
       {
         name: "Radha Ambani",
         stars: 2,
-        title: "Good",
+        name: "Good",
         comment: "Quality is good, delivery on time.",
         date: "3 months ago",
         likes: 2,
@@ -1291,7 +1291,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Grey Imported Kurti",
+    name: "Grey Imported Kurti",
     price: 1399,
     oldPrice: 2199,
     rating: 4.5,
@@ -1332,7 +1332,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Yellow Kurti",
+    name: "Yellow Kurti",
     price: 1199,
     oldPrice: 1799,
     rating: 4.7,
@@ -1366,7 +1366,7 @@ const rawKurtis = [
 
     categorySlug: "designer-kurtis",
 
-    title: "Mint Kurti",
+    name: "Mint Kurti",
     price: 1499,
     oldPrice: 1899,
     rating: 4.8,
@@ -1400,7 +1400,7 @@ const rawSarees = [
 
     categorySlug: "designer-sarees",
 
-    title: "Banarasi Saree",
+    name: "Banarasi Saree",
     price: 2499,
     oldPrice: 3599,
     rating: 4.7,
@@ -1429,7 +1429,7 @@ const rawSarees = [
 
     categorySlug: "designer-sarees",
 
-    title: "Bridal Saree",
+    name: "Bridal Saree",
     price: 2999,
     oldPrice: 3999,
     rating: 4.8,
@@ -1452,7 +1452,7 @@ const rawSarees = [
 
     categorySlug: "designer-sarees",
 
-    title: "Printed Saree",
+    name: "Printed Saree",
     price: 1499,
     oldPrice: 1999,
     rating: 4.5,
@@ -1478,7 +1478,7 @@ const rawLehengas = [
     hoverImage: l1h,
     extraImages: [l1, l1h],
 
-    title: "Black Hoodie",
+    name: "Black Hoodie",
     price: 899,
     oldPrice: 1899,
     rating: 4.5,
@@ -1499,7 +1499,7 @@ const rawLehengas = [
     hoverImage: l2h,
     extraImages: [l2, l2h],
 
-    title: "Printed Hoodie",
+    name: "Printed Hoodie",
     price: 999,
     oldPrice: 2099,
     rating: 4.6,
@@ -1542,19 +1542,19 @@ export const homeData = {
 
   categories: [
     {
-      title: "Designer Sarees",
+      name: "Designer Sarees",
       categorySlug: "designer-sarees",
       bannerImage: sareeBanner,
       products: sarees,
     },
     {
-      title: "Designer Kurtis",
+      name: "Designer Kurtis",
       categorySlug: "designer-kurtis",
       bannerImage: kurtisBanner,
       products: kurtis,
     },
     {
-      title: "Stylish Lehengas",
+      name: "Stylish Lehengas",
       categorySlug: "stylish-lehengas",
       bannerImage: lehengaBanner,
       products: lehengas,
