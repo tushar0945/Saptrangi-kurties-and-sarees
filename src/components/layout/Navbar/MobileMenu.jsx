@@ -30,7 +30,7 @@ const menuItems = [
     dropdown: [
       { label: "Circular", slug: "lehenga" },
       { label: "Flared", slug: "kids-boys" },
-      { label: "Straight Cut", slug: "infants" },
+      { label: "Straight Cut", slug: "infnts" },
     ],
   },
 ];
