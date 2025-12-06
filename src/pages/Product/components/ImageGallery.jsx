@@ -1363,8 +1363,8 @@ import { IoChevronBack, IoChevronForward, IoClose } from "react-icons/io5";
 
 const ImageGallery = ({ product }) => {
   const images = [
-    product.image,
-    product.hoverImage,
+    product.main_image,
+    product.hover_image,
     ...(product.extraImages || []),
   ].filter(Boolean);
 

@@ -895,8 +895,13 @@ import SizeSelectModal from "./SizeSelectModal";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../../context/CartContext";
 
-const AddToCartSection = ({ product, quantity, selectedSize }) => {
-  const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+const AddToCartSection = ({
+  product,
+  quantity,
+  selectedSize,
+  availableSizes,
+}) => {
+  const sizes = availableSizes; // << use backend sizes only
 
   const { addToCart, buyNow } = useCart(); // ⭐ includes buyNow
   const navigate = useNavigate();

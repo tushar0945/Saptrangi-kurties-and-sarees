@@ -907,17 +907,110 @@
 
 // export default HomeCarousel;
 
+// import React, { useRef } from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Pagination } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/pagination";
+
+// const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
+//   const desktopPaginationRef = useRef(null);
+//   const mobilePaginationRef = useRef(null);
+//   console.log("desk:", desktopBanners, "mob:", mobileBanners);
+//   // Pagination initializer (same for both)
+//   const initPagination = (swiper, ref) => {
+//     setTimeout(() => {
+//       if (!ref.current) return;
+//       swiper.params.pagination.el = ref.current;
+//       swiper.pagination.init();
+//       swiper.pagination.render();
+//       swiper.pagination.update();
+//     }, 50);
+//   };
+
+//   return (
+//     <section className="relative w-full overflow-hidden m-0 p-0">
+//       {/* --------------------------- DESKTOP CAROUSEL --------------------------- */}
+//       <div className="hidden md:block">
+//         <Swiper
+//           modules={[Autoplay, Pagination]}
+//           loop
+//           speed={1000}
+//           slidesPerView={1}
+//           autoplay={{ delay: 3000, disableOnInteraction: false }}
+//           pagination={{ clickable: true }}
+//           onSwiper={(swiper) => initPagination(swiper, desktopPaginationRef)}
+//           className="w-full"
+//         >
+//           {desktopBanners.map((item, i) => (
+//             <SwiperSlide key={i}>
+//               <img
+//                 src={item.image}
+//                 alt={item.alt}
+//                 loading="lazy"
+//                 className="w-full h-auto object-fill"
+//               />
+//             </SwiperSlide>
+//           ))}
+//         </Swiper>
+
+//         <div
+//           ref={desktopPaginationRef}
+//           className="custom-pagination flex justify-center gap-3 mt-4"
+//         ></div>
+//       </div>
+
+//       {/* --------------------------- MOBILE CAROUSEL --------------------------- */}
+//       <div className="block md:hidden">
+//         <Swiper
+//           modules={[Autoplay, Pagination]}
+//           loop
+//           speed={900}
+//           slidesPerView={1}
+//           autoplay={{ delay: 2800, disableOnInteraction: false }}
+//           pagination={{ clickable: true }}
+//           onSwiper={(swiper) => initPagination(swiper, mobilePaginationRef)}
+//           className="w-full"
+//         >
+//           {mobileBanners.map((item, i) => (
+//             <SwiperSlide key={i}>
+//               <img
+//                 src={item.image}
+//                 alt={item.alt}
+//                 loading="lazy"
+//                 className="w-full h-auto object-fill"
+//               />
+//             </SwiperSlide>
+//           ))}
+//         </Swiper>
+
+//         <div
+//           ref={mobilePaginationRef}
+//           className="custom-pagination flex justify-center gap-3 mt-4"
+//         ></div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default HomeCarousel;
+
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
+const HomeCarousel = ({ desktopBanners = [], mobileBanners = [] }) => {
   const desktopPaginationRef = useRef(null);
   const mobilePaginationRef = useRef(null);
 
-  // Pagination initializer (same for both)
+  // 🔥 Handles both: string OR object
+  const getImage = (item) => (typeof item === "string" ? item : item?.image);
+
+  const getAlt = (item) =>
+    typeof item === "string" ? "banner" : item?.alt || "banner";
+
   const initPagination = (swiper, ref) => {
     setTimeout(() => {
       if (!ref.current) return;
@@ -930,7 +1023,7 @@ const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
 
   return (
     <section className="relative w-full overflow-hidden m-0 p-0">
-      {/* --------------------------- DESKTOP CAROUSEL --------------------------- */}
+      {/* --------------------------- DESKTOP --------------------------- */}
       <div className="hidden md:block">
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -945,10 +1038,10 @@ const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
           {desktopBanners.map((item, i) => (
             <SwiperSlide key={i}>
               <img
-                src={item.image}
-                alt={item.alt}
+                src={getImage(item)}
+                alt={getAlt(item)}
                 loading="lazy"
-                className="w-full h-auto object-fill"
+                className="w-full h-auto object-cover"
               />
             </SwiperSlide>
           ))}
@@ -960,7 +1053,7 @@ const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
         ></div>
       </div>
 
-      {/* --------------------------- MOBILE CAROUSEL --------------------------- */}
+      {/* --------------------------- MOBILE --------------------------- */}
       <div className="block md:hidden">
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -975,10 +1068,10 @@ const HomeCarousel = ({ desktopBanners, mobileBanners }) => {
           {mobileBanners.map((item, i) => (
             <SwiperSlide key={i}>
               <img
-                src={item.image}
-                alt={item.alt}
+                src={getImage(item)}
+                alt={getAlt(item)}
                 loading="lazy"
-                className="w-full h-auto object-fill"
+                className="w-full h-auto object-cover"
               />
             </SwiperSlide>
           ))}

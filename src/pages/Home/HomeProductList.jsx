@@ -382,17 +382,34 @@ const HomeProductList = ({ products = [] }) => {
   return (
     <div className="relative w-full py-1 sm:py-2">
       {/* LEFT ARROW */}
+      {/* {showLeft && (
+        <button
+          onClick={scrollLeft}
+          className="absolute left-2 top-1/2 -translate-y-[110%]
+    bg-white/80 backdrop-blur-md 
+    shadow-lg hover:shadow-xl 
+    border border-gray-200 
+    rounded-full p-3 z-20 
+    transition-all duration-200 
+    hover:bg-white hidden md:flex 
+    items-center justify-center"
+        >
+          <span className="text-gray-700 text-lg">❮</span>
+        </button>
+      )} */}
+
       {showLeft && (
         <button
           onClick={scrollLeft}
-          className="absolute left-2 top-1/2 -translate-y-1/2 
-          bg-white/70 backdrop-blur-md 
-          shadow-lg hover:shadow-xl 
-          border border-gray-200 
-          rounded-full p-3 z-20 
-          transition-all duration-200 
-          hover:bg-white hidden md:flex 
-          items-center justify-center"
+          className="absolute left-2 top-1/2 -translate-y-[110%]
+      bg-white/80 backdrop-blur-md 
+      shadow-lg hover:shadow-xl 
+      border border-gray-200 
+      w-10 h-10 rounded-full 
+      z-20 
+      transition-all duration-200 
+      hover:bg-white hidden md:flex 
+      items-center justify-center"
         >
           <span className="text-gray-700 text-lg">❮</span>
         </button>
@@ -413,17 +430,33 @@ const HomeProductList = ({ products = [] }) => {
       </div>
 
       {/* RIGHT ARROW */}
+      {/* {showRight && (
+        <button
+          onClick={scrollRight}
+          className="absolute right-2 top-1/2 -translate-y-[110%]
+    bg-white/80 backdrop-blur-md 
+    shadow-lg hover:shadow-xl 
+    border border-gray-200 
+    rounded-full p-3 z-20 
+    transition-all duration-200 
+    hover:bg-white hidden md:flex 
+    items-center justify-center"
+        >
+          <span className="text-gray-700 text-lg">❯</span>
+        </button>
+      )} */}
       {showRight && (
         <button
           onClick={scrollRight}
-          className="absolute right-2 top-1/2 -translate-y-1/2 
-          bg-white/70 backdrop-blur-md 
-          shadow-lg hover:shadow-xl 
-          border border-gray-200 
-          rounded-full p-3 z-20 
-          transition-all duration-200 
-          hover:bg-white hidden md:flex 
-          items-center justify-center"
+          className="absolute right-2 top-1/2 -translate-y-[110%]
+      bg-white/80 backdrop-blur-md 
+      shadow-lg hover:shadow-xl 
+      border border-gray-200 
+      w-10 h-10 rounded-full 
+      z-20 
+      transition-all duration-200 
+      hover:bg-white hidden md:flex 
+      items-center justify-center"
         >
           <span className="text-gray-700 text-lg">❯</span>
         </button>
