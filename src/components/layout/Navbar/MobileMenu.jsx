@@ -4,34 +4,35 @@ import { ArrowRight, ChevronDown, ChevronUp, X } from "lucide-react";
 
 const menuItems = [
   {
-    title: "WOMEN",
+    title: "Kurtis",
     dropdown: [
-      { label: "Kurtis", slug: "designer-kurtis" },
-      { label: "Sarees", slug: "designer-sarees" },
-      { label: "Tops", slug: "tops" },
-      { label: "Lehengas", slug: "stylish-lehengas" },
+      { label: "Designer Kurties", slug: "kurti" },
+      { label: "straight-cut Kurties", slug: "straight-cut-sarees" },
+      { label: "Anarkali", slug: "anarkali" },
+      { label: "Angrakha", slug: "angrakha" },
     ],
   },
   {
-    title: "MEN",
+    title: "Sarees",
     dropdown: [
-      { label: "Shirts", slug: "men-shirts" },
-      { label: "Jeans", slug: "men-jeans" },
-      { label: "T-Shirts", slug: "men-tshirts" },
-      { label: "Kurtas", slug: "men-kurtas" },
+      { label: "Banarasi", slug: "men-shirts" },
+      { label: "Kanjeevaram", slug: "men-jeans" },
+      { label: "Paithani", slug: "men-tshirts" },
+      { label: "Bandhani", slug: "men-kurtas" },
+      { label: "Ikat", slug: "men-kurtas" },
+      { label: "Phulkari", slug: "men-kurtas" },
+      { label: "embroidered", slug: "men-kurtas" },
+      { label: "Mysore silk", slug: "men-kurtas" },
     ],
   },
   {
-    title: "KIDS",
+    title: "Lehengas",
     dropdown: [
-      { label: "Girls", slug: "kids-girls" },
-      { label: "Boys", slug: "kids-boys" },
-      { label: "Infants", slug: "infants" },
+      { label: "Circular", slug: "lehenga" },
+      { label: "Flared", slug: "kids-boys" },
+      { label: "Straight Cut", slug: "infants" },
     ],
   },
-  { title: "HOME" },
-  { title: "OFFERS" },
-  { title: "VMART" },
 ];
 
 const MobileMenu = ({ open, onClose }) => {
