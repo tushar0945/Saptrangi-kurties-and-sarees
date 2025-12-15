@@ -124,7 +124,7 @@ const CartItemsList = ({ cart }) => {
               {/* PRODUCT IMAGE */}
               <img
                 src={item.image}
-                className="w-14 h-14 rounded object-cover"
+                className="w-14 h-14 rounded object-cover object-[center_-0%]"
                 alt={item.name}
               />
 
