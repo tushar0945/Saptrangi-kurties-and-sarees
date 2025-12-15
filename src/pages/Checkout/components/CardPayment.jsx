@@ -1,37 +1,3 @@
-// const CardPayment = () => {
-//   return (
-//     <div>
-//       <h2 className="text-xl font-semibold mb-6">Debit & Credit Card</h2>
-
-//       <input
-//         type="text"
-//         placeholder="Enter Card Number"
-//         className="w-full border p-3 rounded mb-4"
-//       />
-
-//       <div className="flex gap-4">
-//         <input
-//           type="text"
-//           placeholder="MM/YY"
-//           className="w-full border p-3 rounded"
-//         />
-
-//         <input
-//           type="password"
-//           placeholder="CVV"
-//           className="w-full border p-3 rounded"
-//         />
-//       </div>
-
-//       <button className="mt-6 w-full bg-primary text-white py-3 rounded-lg">
-//         PAY NOW
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default CardPayment;
-
 import React, { useState } from "react";
 
 const CardPayment = ({ onPay }) => {

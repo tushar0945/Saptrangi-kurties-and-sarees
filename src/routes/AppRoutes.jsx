@@ -1,68 +1,3 @@
-// import React from "react";
-// import { Routes, Route, Outlet } from "react-router-dom"; // ✅ FIXED
-
-// import Home from "../pages/Home/Home";
-// import ProductDetails from "../pages/Product/ProductDetails";
-// import CategoryPage from "../pages/Category/CategoryPage";
-// import CartPage from "../pages/Cart/CartPage";
-// import CheckoutPage from "../pages/Checkout/CheckoutPage";
-// import AccountPage from "../pages/Account/AccountPage";
-// import Orders from "../pages/Account/sections/Orders";
-// import Payments from "../pages/Account/sections/Payments";
-// import Wallet from "../pages/Account/sections/Wallet";
-// import Addresses from "../pages/Account/sections/Addresses";
-// import Profile from "../pages/Account/sections/Profile";
-// import Help from "../pages/Account/sections/Help";
-// import OrderDetails from "../pages/Account/sections/OrderDetails";
-// import OrderCancel from "../pages/Account/sections/OrderCancel";
-// import CancelSuccess from "../pages/Account/sections/CancelSuccess";
-
-// const AppRoutes = () => {
-//   return (
-//     <Routes>
-//       {/* Home */}
-//       <Route path="/" element={<Home />} />
-
-//       {/* Product Details */}
-//       <Route path="/collection/:productSlug" element={<ProductDetails />} />
-
-//       <Route path="/category/:categorySlug" element={<CategoryPage />} />
-
-//       <Route path="/cart" element={<CartPage />} />
-
-//       <Route path="/checkout" element={<CheckoutPage />} />
-
-//       {/* 🔥 FIX: Order Details works on Mobile + Desktop */}
-//       <Route
-//         path="/order-details/:id"
-//         element={
-//           <AccountPage>
-//             <Outlet />
-//           </AccountPage>
-//         }
-//       >
-//         <Route index element={<OrderDetails />} />
-//       </Route>
-
-//       {/* Main Account Routes */}
-//       <Route path="/myaccount" element={<AccountPage />}>
-//         <Route path="orders" element={<Orders />} />
-//         <Route path="orders/:id" element={<OrderDetails />} />
-//         <Route path="orders/:id/cancel" element={<OrderCancel />} />
-//         <Route path="orders/:id/cancelled" element={<CancelSuccess />} />
-
-//         <Route path="payments" element={<Payments />} />
-//         <Route path="wallet" element={<Wallet />} />
-//         <Route path="addresses" element={<Addresses />} />
-//         <Route path="profile" element={<Profile />} />
-//         <Route path="help" element={<Help />} />
-//       </Route>
-//     </Routes>
-//   );
-// };
-
-// export default AppRoutes;
-
 import { Routes, Route } from "react-router-dom";
 
 // Public pages
@@ -101,7 +36,6 @@ import LogoutHandler from "../pages/Auth/LogoutHandler";
 
 import PageNotFound from "../pages/NotFound/PageNotFound";
 
-// Utils
 import PrivateRoute from "../components/auth/PrivateRoute";
 import { Outlet } from "react-router-dom";
 
@@ -115,8 +49,6 @@ function App() {
       <Route path="/collection/:productSlug" element={<ProductDetails />} />
 
       <Route path="/category/:categorySlug" element={<CategoryPage />} />
-
-      <Route path="/cart" element={<CartPage />} />
 
       <Route path="/about" element={<AboutUs />} />
       <Route path="/terms" element={<TermsConditions />} />
@@ -162,6 +94,14 @@ function App() {
       >
         <Route index element={<OrderDetails />} />
       </Route>
+      <Route
+        path="/cart"
+        element={
+          <PrivateRoute>
+            <CartPage />
+          </PrivateRoute>
+        }
+      />
       <Route
         path="coupons"
         element={

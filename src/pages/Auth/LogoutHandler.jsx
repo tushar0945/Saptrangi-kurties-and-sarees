@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext"; // <-- import your auth hook
+import { useAuth } from "../../context/AuthContext";
 
 const LogoutHandler = () => {
   const navigate = useNavigate();
-  const { logout } = useAuth(); // <-- get logout from context
+  const { logout } = useAuth();
 
   useEffect(() => {
-    logout(); // clears user, token, and localStorage
-    navigate("/"); // redirect to home
-  }, []);
+    logout(); // clears context + localStorage
+    navigate("/login", { replace: true });
+  }, [logout, navigate]);
 
   return null;
 };

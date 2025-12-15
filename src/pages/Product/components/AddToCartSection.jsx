@@ -1,498 +1,110 @@
-// // // // // // // // // // // src/pages/Product/components/AddToCartSection.jsx
-
-// // // // // // // // // // import React from "react";
-
-// // // // // // // // // // const AddToCartSection = ({ product, quantity }) => {
-// // // // // // // // // //   const handleAddToCart = () => {
-// // // // // // // // // //     console.log("ADD TO CART:", { product, quantity });
-
-// // // // // // // // // //     // 🔥 When backend/API is ready:
-// // // // // // // // // //     // await addToCartAPI({ productId: product.id, quantity });
-// // // // // // // // // //   };
-
-// // // // // // // // // //   const handleBuyNow = () => {
-// // // // // // // // // //     console.log("BUY NOW:", { product, quantity });
-
-// // // // // // // // // //     // 🔥 Redirect to checkout page later
-// // // // // // // // // //     // navigate("/checkout");
-// // // // // // // // // //   };
-
-// // // // // // // // // //   return (
-// // // // // // // // // //     <div className="mt-6 flex flex-col gap-3 w-full max-w-md">
-// // // // // // // // // //       {/* ADD TO CART BUTTON */}
-// // // // // // // // // //       <button
-// // // // // // // // // //         onClick={handleAddToCart}
-// // // // // // // // // //         className="w-full py-3 bg-yellow-400 hover:bg-yellow-500
-// // // // // // // // // //                    text-black font-bold text-lg rounded-lg transition-all"
-// // // // // // // // // //       >
-// // // // // // // // // //         Add to Cart
-// // // // // // // // // //       </button>
-
-// // // // // // // // // //       {/* BUY NOW BUTTON */}
-// // // // // // // // // //       <button
-// // // // // // // // // //         onClick={handleBuyNow}
-// // // // // // // // // //         className="w-full py-3 bg-black hover:bg-gray-800
-// // // // // // // // // //                    text-white font-bold text-lg rounded-lg transition-all"
-// // // // // // // // // //       >
-// // // // // // // // // //         Buy Now
-// // // // // // // // // //       </button>
-// // // // // // // // // //     </div>
-// // // // // // // // // //   );
-// // // // // // // // // // };
-
-// // // // // // // // // // export default AddToCartSection;
-
-// // // // // // // // // // src/pages/Product/components/AddToCartSection.jsx
-
-// // // // // // // // // import React from "react";
-
-// // // // // // // // // const AddToCartSection = ({ product, quantity }) => {
-// // // // // // // // //   const handleAddToCart = () => {
-// // // // // // // // //     console.log("ADD TO CART:", { product, quantity });
-// // // // // // // // //   };
-
-// // // // // // // // //   const handleBuyNow = () => {
-// // // // // // // // //     console.log("BUY NOW:", { product, quantity });
-// // // // // // // // //   };
-
-// // // // // // // // //   return (
-// // // // // // // // //     <div className="mt-6 flex flex-col gap-4 w-full max-w-md">
-// // // // // // // // //       {/* ADD TO CART BUTTON */}
-// // // // // // // // //       <button
-// // // // // // // // //         onClick={handleAddToCart}
-// // // // // // // // //         className="
-// // // // // // // // //           w-full py-3 rounded-xl font-semibold text-lg
-// // // // // // // // //           bg-primary text-white
-// // // // // // // // //           hover:bg-secondary
-// // // // // // // // //           transition-all duration-300
-// // // // // // // // //           shadow-md hover:shadow-xl
-// // // // // // // // //           transform hover:scale-[1.02] active:scale-[0.98]
-// // // // // // // // //         "
-// // // // // // // // //       >
-// // // // // // // // //         Add to Cart
-// // // // // // // // //       </button>
-
-// // // // // // // // //       {/* BUY NOW BUTTON */}
-// // // // // // // // //       <button
-// // // // // // // // //         onClick={handleBuyNow}
-// // // // // // // // //         className="
-// // // // // // // // //           w-full py-3 rounded-xl font-semibold text-lg
-// // // // // // // // //           bg-dark text-white
-// // // // // // // // //           hover:bg-gray-800
-// // // // // // // // //           transition-all duration-300
-// // // // // // // // //           shadow-lg hover:shadow-xl
-// // // // // // // // //           transform hover:scale-[1.02] active:scale-[0.98]
-// // // // // // // // //         "
-// // // // // // // // //       >
-// // // // // // // // //         Buy Now
-// // // // // // // // //       </button>
-// // // // // // // // //     </div>
-// // // // // // // // //   );
-// // // // // // // // // };
-
-// // // // // // // // // export default AddToCartSection;
-
-// // // // // // // // import React, { useState } from "react";
-// // // // // // // // import SizeSelectModal from "./SizeSelectModal";
-
-// // // // // // // // const AddToCartSection = ({ product, quantity }) => {
-// // // // // // // //   const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
-
-// // // // // // // //   const [selectedSize, setSelectedSize] = useState(null);
-// // // // // // // //   const [showSizeModal, setShowSizeModal] = useState(false);
-// // // // // // // //   const [added, setAdded] = useState(false);
-
-// // // // // // // //   const handleAddToCart = () => {
-// // // // // // // //     if (!selectedSize) {
-// // // // // // // //       setShowSizeModal(true);
-// // // // // // // //       return;
-// // // // // // // //     }
-
-// // // // // // // //     setAdded(true);
-
-// // // // // // // //     console.log("ADD TO CART:", {
-// // // // // // // //       product,
-// // // // // // // //       quantity,
-// // // // // // // //       size: selectedSize,
-// // // // // // // //     });
-
-// // // // // // // //     // Optional: update your cart context or redux
-// // // // // // // //     // addToCart(product, quantity, selectedSize);
-// // // // // // // //   };
-
-// // // // // // // //   const handleBuyNow = () => {
-// // // // // // // //     console.log("BUY NOW:", {
-// // // // // // // //       product,
-// // // // // // // //       quantity,
-// // // // // // // //       size: selectedSize,
-// // // // // // // //     });
-// // // // // // // //   };
-
-// // // // // // // //   const handleSizeSelect = (size) => {
-// // // // // // // //     setSelectedSize(size);
-// // // // // // // //     setShowSizeModal(false);
-// // // // // // // //   };
-
-// // // // // // // //   return (
-// // // // // // // //     <>
-// // // // // // // //       {/* Size Modal */}
-// // // // // // // //       <SizeSelectModal
-// // // // // // // //         open={showSizeModal}
-// // // // // // // //         sizes={sizes}
-// // // // // // // //         onClose={() => setShowSizeModal(false)}
-// // // // // // // //         onSelect={handleSizeSelect}
-// // // // // // // //       />
-
-// // // // // // // //       <div className="mt-6 flex flex-col gap-4 w-full max-w-md">
-// // // // // // // //         {/* ADD TO CART LOGIC */}
-// // // // // // // //         {!added ? (
-// // // // // // // //           <button
-// // // // // // // //             onClick={handleAddToCart}
-// // // // // // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-yellow-400 hover:bg-yellow-500 transition-all shadow-md"
-// // // // // // // //           >
-// // // // // // // //             ADD TO BAG
-// // // // // // // //           </button>
-// // // // // // // //         ) : (
-// // // // // // // //           <button className="w-full py-3 rounded-xl font-semibold text-lg bg-purple-600 text-white shadow-lg">
-// // // // // // // //             ITEM ADDED TO BAG
-// // // // // // // //           </button>
-// // // // // // // //         )}
-
-// // // // // // // //         {/* BUY NOW BUTTON */}
-// // // // // // // //         <button
-// // // // // // // //           onClick={handleBuyNow}
-// // // // // // // //           className="w-full py-3 rounded-xl font-semibold text-lg bg-gray-900 text-white hover:bg-gray-800 transition-all shadow-md"
-// // // // // // // //         >
-// // // // // // // //           Buy Now
-// // // // // // // //         </button>
-
-// // // // // // // //         {/* GO TO BAG BUTTON */}
-// // // // // // // //         {added && (
-// // // // // // // //           <button
-// // // // // // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-green-600 text-white mt-2"
-// // // // // // // //             onClick={() => (window.location.href = "/cart")}
-// // // // // // // //           >
-// // // // // // // //             GO TO BAG →
-// // // // // // // //           </button>
-// // // // // // // //         )}
-// // // // // // // //       </div>
-// // // // // // // //     </>
-// // // // // // // //   );
-// // // // // // // // };
-
-// // // // // // // // export default AddToCartSection;
-
-// // // // // // // import React, { useState } from "react";
-// // // // // // // import SizeSelectModal from "./SizeSelectModal";
-
-// // // // // // // const AddToCartSection = ({ product, quantity }) => {
-// // // // // // //   const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
-
-// // // // // // //   const [selectedSize, setSelectedSize] = useState(null);
-// // // // // // //   const [showSizeModal, setShowSizeModal] = useState(false);
-
-// // // // // // //   // Button states: "default" → "added" → "goToBag"
-// // // // // // //   const [buttonState, setButtonState] = useState("default");
-
-// // // // // // //   const handleAddToCart = () => {
-// // // // // // //     if (!selectedSize) {
-// // // // // // //       setShowSizeModal(true);
-// // // // // // //       return;
-// // // // // // //     }
-
-// // // // // // //     console.log("ADD TO CART:", { product, quantity, size: selectedSize });
-
-// // // // // // //     // Flip 1: change ADD TO BAG → ITEM ADDED TO BAG
-// // // // // // //     setButtonState("added");
-
-// // // // // // //     // Flip 2: after 2 seconds change → GO TO BAG
-// // // // // // //     setTimeout(() => {
-// // // // // // //       setButtonState("goToBag");
-// // // // // // //     }, 1500);
-// // // // // // //   };
-
-// // // // // // //   const handleSizeSelect = (size) => {
-// // // // // // //     setSelectedSize(size);
-// // // // // // //     setShowSizeModal(false);
-// // // // // // //   };
-
-// // // // // // //   return (
-// // // // // // //     <>
-// // // // // // //       {/* SIZE POPUP */}
-// // // // // // //       <SizeSelectModal
-// // // // // // //         open={showSizeModal}
-// // // // // // //         sizes={sizes}
-// // // // // // //         onClose={() => setShowSizeModal(false)}
-// // // // // // //         onSelect={handleSizeSelect}
-// // // // // // //       />
-
-// // // // // // //       <div className="mt-6 w-full max-w-md">
-// // // // // // //         {/* BUTTON STATES */}
-// // // // // // //         {buttonState === "default" && (
-// // // // // // //           <button
-// // // // // // //             onClick={handleAddToCart}
-// // // // // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-yellow-400 hover:bg-yellow-500 transition-all shadow-md"
-// // // // // // //           >
-// // // // // // //             ADD TO BAG
-// // // // // // //           </button>
-// // // // // // //         )}
-
-// // // // // // //         {buttonState === "added" && (
-// // // // // // //           <button className="w-full py-3 rounded-xl font-semibold text-lg bg-purple-600 text-white shadow-lg animate-[flip_0.4s]">
-// // // // // // //             ITEM ADDED TO BAG
-// // // // // // //           </button>
-// // // // // // //         )}
-
-// // // // // // //         {buttonState === "goToBag" && (
-// // // // // // //           <button
-// // // // // // //             onClick={() => (window.location.href = "/cart")}
-// // // // // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-green-600 text-white shadow-lg"
-// // // // // // //           >
-// // // // // // //             GO TO BAG →
-// // // // // // //           </button>
-// // // // // // //         )}
-// // // // // // //       </div>
-// // // // // // //     </>
-// // // // // // //   );
-// // // // // // // };
-
-// // // // // // // export default AddToCartSection;
-
-// // // // // // import React, { useState } from "react";
-// // // // // // import SizeSelectModal from "./SizeSelectModal";
-
-// // // // // // const AddToCartSection = ({ product, quantity }) => {
-// // // // // //   const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
-
-// // // // // //   const [selectedSize, setSelectedSize] = useState(null);
-// // // // // //   const [showSizeModal, setShowSizeModal] = useState(false);
-
-// // // // // //   const [buttonState, setButtonState] = useState("default");
-// // // // // //   // default → added → goToBag
-
-// // // // // //   const handleAddToCart = () => {
-// // // // // //     // if size is not selected → open popup
-// // // // // //     if (!selectedSize) {
-// // // // // //       setShowSizeModal(true);
-// // // // // //       return;
-// // // // // //     }
-
-// // // // // //     // Begin Bewakoof animation
-// // // // // //     setButtonState("added");
-
-// // // // // //     setTimeout(() => {
-// // // // // //       setButtonState("goToBag");
-// // // // // //     }, 1500);
-// // // // // //   };
-
-// // // // // //   // Called when user selects size inside popup
-// // // // // //   const handleSizeSelect = (size) => {
-// // // // // //     setSelectedSize(size); // only select size
-// // // // // //   };
-
-// // // // // //   // Called when user clicks Add to Bag inside popup
-// // // // // //   const handleModalConfirm = () => {
-// // // // // //     if (!selectedSize) return; // prevent close if no size selected
-
-// // // // // //     setShowSizeModal(false);
-// // // // // //     handleAddToCart();
-// // // // // //   };
-
-// // // // // //   return (
-// // // // // //     <>
-// // // // // //       {/* POPUP */}
-// // // // // //       <SizeSelectModal
-// // // // // //         open={showSizeModal}
-// // // // // //         sizes={sizes}
-// // // // // //         selectedSize={selectedSize}
-// // // // // //         onSelectSize={handleSizeSelect}
-// // // // // //         onConfirm={handleModalConfirm}
-// // // // // //       />
-
-// // // // // //       <div className="mt-6 w-full max-w-md">
-// // // // // //         {/* Default State */}
-// // // // // //         {buttonState === "default" && (
-// // // // // //           <button
-// // // // // //             onClick={handleAddToCart}
-// // // // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-yellow-400 hover:bg-yellow-500 transition shadow-md"
-// // // // // //           >
-// // // // // //             ADD TO BAG
-// // // // // //           </button>
-// // // // // //         )}
-
-// // // // // //         {/* After Added */}
-// // // // // //         {buttonState === "added" && (
-// // // // // //           <button className="w-full py-3 rounded-xl font-semibold text-lg bg-purple-600 text-white shadow-lg">
-// // // // // //             ITEM ADDED TO BAG
-// // // // // //           </button>
-// // // // // //         )}
-
-// // // // // //         {/* Final Step */}
-// // // // // //         {buttonState === "goToBag" && (
-// // // // // //           <button
-// // // // // //             onClick={() => (window.location.href = "/cart")}
-// // // // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-green-600 text-white shadow-lg"
-// // // // // //           >
-// // // // // //             GO TO BAG →
-// // // // // //           </button>
-// // // // // //         )}
-// // // // // //       </div>
-// // // // // //     </>
-// // // // // //   );
-// // // // // // };
-
-// // // // // // export default AddToCartSection;
-
-// // // // // import React, { useState } from "react";
-// // // // // import SizeSelectModal from "./SizeSelectModal";
-
-// // // // // const AddToCartSection = ({ product, quantity }) => {
-// // // // //   const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
-
-// // // // //   const [selectedSize, setSelectedSize] = useState(null);
-// // // // //   const [showSizeModal, setShowSizeModal] = useState(false);
-
-// // // // //   const [buttonState, setButtonState] = useState("default");
-// // // // //   // default → added → goToBag
-
-// // // // //   // --------------------------------------------------------
-// // // // //   // ADD TO BAG LOGIC
-// // // // //   // --------------------------------------------------------
-// // // // //   const handleAddToCart = () => {
-// // // // //     if (!selectedSize) {
-// // // // //       setShowSizeModal(true);
-// // // // //       return;
-// // // // //     }
-
-// // // // //     // Bewakoof Flip Animation
-// // // // //     setButtonState("added");
-
-// // // // //     setTimeout(() => {
-// // // // //       setButtonState("goToBag");
-// // // // //     }, 1500);
-// // // // //   };
-
-// // // // //   // --------------------------------------------------------
-// // // // //   // BUY NOW LOGIC
-// // // // //   // --------------------------------------------------------
-// // // // //   const handleBuyNow = () => {
-// // // // //     if (!selectedSize) {
-// // // // //       setShowSizeModal(true);
-// // // // //       return;
-// // // // //     }
-
-// // // // //     // Your Buy Now navigation
-// // // // //     console.log("BUY NOW:", {
-// // // // //       product,
-// // // // //       quantity,
-// // // // //       size: selectedSize,
-// // // // //     });
-
-// // // // //     window.location.href = "/checkout";
-// // // // //   };
-
-// // // // //   // --------------------------------------------------------
-// // // // //   // POPUP EVENTS
-// // // // //   // --------------------------------------------------------
-// // // // //   const handleSizeSelect = (size) => {
-// // // // //     setSelectedSize(size);
-// // // // //   };
-
-// // // // //   const handleModalConfirm = () => {
-// // // // //     if (!selectedSize) return;
-// // // // //     setShowSizeModal(false);
-// // // // //     handleAddToCart(); // Continue add-to-cart flow
-// // // // //   };
-
-// // // // //   return (
-// // // // //     <>
-// // // // //       {/* POPUP */}
-// // // // //       <SizeSelectModal
-// // // // //         open={showSizeModal}
-// // // // //         sizes={sizes}
-// // // // //         selectedSize={selectedSize}
-// // // // //         onSelectSize={handleSizeSelect}
-// // // // //         onConfirm={handleModalConfirm}
-// // // // //       />
-
-// // // // //       <div className="mt-6 w-full max-w-md flex flex-col gap-4">
-// // // // //         {/* ADD TO BAG FLOW */}
-// // // // //         {buttonState === "default" && (
-// // // // //           <button
-// // // // //             onClick={handleAddToCart}
-// // // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-yellow-400 hover:bg-yellow-500 transition shadow-md"
-// // // // //           >
-// // // // //             ADD TO BAG
-// // // // //           </button>
-// // // // //         )}
-
-// // // // //         {buttonState === "added" && (
-// // // // //           <button className="w-full py-3 rounded-xl font-semibold text-lg bg-purple-600 text-white shadow-lg">
-// // // // //             ITEM ADDED TO BAG
-// // // // //           </button>
-// // // // //         )}
-
-// // // // //         {buttonState === "goToBag" && (
-// // // // //           <button
-// // // // //             onClick={() => (window.location.href = "/cart")}
-// // // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-green-600 text-white shadow-lg"
-// // // // //           >
-// // // // //             GO TO BAG →
-// // // // //           </button>
-// // // // //         )}
-
-// // // // //         {/* BUY NOW BUTTON — Always visible */}
-// // // // //         <button
-// // // // //           onClick={handleBuyNow}
-// // // // //           className="w-full py-3 rounded-xl font-semibold text-lg bg-black text-white hover:bg-gray-800 transition shadow-md"
-// // // // //         >
-// // // // //           BUY NOW
-// // // // //         </button>
-// // // // //       </div>
-// // // // //     </>
-// // // // //   );
-// // // // // };
-
-// // // // // export default AddToCartSection;
-
-// // // // import React, { useState } from "react";
+// // // // import React, { useState, useEffect } from "react";
 // // // // import SizeSelectModal from "./SizeSelectModal";
+// // // // import { Link, useNavigate } from "react-router-dom";
+// // // // import { useCart } from "../../../context/CartContext";
+// // // // import { AuthService } from "../../../services/authService";
+// // // // import api from "../../../api/axios";
 
-// // // // const AddToCartSection = ({ product, quantity }) => {
-// // // //   const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+// // // // const AddToCartSection = ({
+// // // //   product,
+// // // //   quantity,
+// // // //   selectedSize,
+// // // //   availableSizes,
+// // // // }) => {
+// // // //   const sizes = availableSizes;
 
-// // // //   const [selectedSize, setSelectedSize] = useState(null);
+// // // //   const { addToCart, buyNow } = useCart();
+// // // //   const navigate = useNavigate();
+
+// // // //   const [internalSize, setInternalSize] = useState(selectedSize);
 // // // //   const [showSizeModal, setShowSizeModal] = useState(false);
-
 // // // //   const [buttonState, setButtonState] = useState("default");
+// // // //   const [loading, setLoading] = useState(false);
 
-// // // //   const handleAddToCart = () => {
-// // // //     if (!selectedSize) {
-// // // //       setShowSizeModal(true);
-// // // //       return;
-// // // //     }
+// // // //   useEffect(() => {
+// // // //     setInternalSize(selectedSize);
+// // // //   }, [selectedSize]);
 
+// // // //   // 🎬 animation
+// // // //   const startAddToCartAnimation = () => {
 // // // //     setButtonState("added");
-
-// // // //     setTimeout(() => {
-// // // //       setButtonState("goToBag");
-// // // //     }, 1500);
+// // // //     setTimeout(() => setButtonState("goToBag"), 1500);
 // // // //   };
 
-// // // //   const handleBuyNow = () => {
-// // // //     if (!selectedSize) {
+// // // //   // 🧠 CORE ADD TO CART FLOW
+// // // //   const handleAddToCart = async () => {
+// // // //     // 1️⃣ Size check
+// // // //     if (!internalSize) {
 // // // //       setShowSizeModal(true);
 // // // //       return;
 // // // //     }
-// // // //     window.location.href = "/checkout";
+
+// // // //     // 2️⃣ Auth check
+// // // //     if (!AuthService.isLoggedIn()) {
+// // // //       navigate("/login", {
+// // // //         state: { from: window.location.pathname },
+// // // //       });
+// // // //       return;
+// // // //     }
+
+// // // //     try {
+// // // //       setLoading(true);
+
+// // // //       // 3️⃣ Backend API call
+// // // //       const res = await api.post("/cart/add", {
+// // // //         productId: product.id,
+// // // //         quantity,
+// // // //       });
+// // // //       // size: internalSize,
+// // // //       console.log(res);
+// // // //       // 4️⃣ Update local cart AFTER backend success
+// // // //       addToCart(product, internalSize, quantity);
+
+// // // //       // 5️⃣ Animate UI
+// // // //       startAddToCartAnimation();
+// // // //     } catch (err) {
+// // // //       if (err.response?.status === 401) {
+// // // //         navigate("/login");
+// // // //       } else {
+// // // //         alert("Failed to add product to cart");
+// // // //       }
+// // // //     } finally {
+// // // //       setLoading(false);
+// // // //     }
 // // // //   };
 
-// // // //   const handleSizeSelect = (size) => {
-// // // //     setSelectedSize(size);
+// // // //   // 🛒 BUY NOW FLOW
+// // // //   const handleBuyNow = async () => {
+// // // //     if (!internalSize) {
+// // // //       setShowSizeModal(true);
+// // // //       return;
+// // // //     }
+
+// // // //     if (!AuthService.isLoggedIn()) {
+// // // //       navigate("/login");
+// // // //       return;
+// // // //     }
+
+// // // //     try {
+// // // //       setLoading(true);
+
+// // // //       await api.post("/cart/add", {
+// // // //         product_id: product.id,
+// // // //         quantity,
+// // // //       });
+// // // //       // size: internalSize,
+
+// // // //       buyNow(product, internalSize, quantity);
+// // // //       navigate("/checkout");
+// // // //     } catch {
+// // // //       alert("Buy Now failed");
+// // // //     } finally {
+// // // //       setLoading(false);
+// // // //     }
 // // // //   };
 
-// // // //   const handleModalConfirm = () => {
-// // // //     if (!selectedSize) return;
+// // // //   // POPUP confirm
+// // // //   const handlePopupConfirm = () => {
 // // // //     setShowSizeModal(false);
 // // // //     handleAddToCart();
 // // // //   };
@@ -502,43 +114,46 @@
 // // // //       <SizeSelectModal
 // // // //         open={showSizeModal}
 // // // //         sizes={sizes}
-// // // //         selectedSize={selectedSize}
-// // // //         onSelectSize={handleSizeSelect}
-// // // //         onConfirm={handleModalConfirm}
+// // // //         selectedSize={internalSize}
+// // // //         onSelectSize={setInternalSize}
+// // // //         onConfirm={handlePopupConfirm}
+// // // //         onClose={() => setShowSizeModal(false)}
 // // // //       />
 
 // // // //       <div className="mt-6 w-full max-w-md flex flex-col gap-4">
-// // // //         {/* Default Add to Bag */}
+// // // //         {/* ADD TO BAG */}
 // // // //         {buttonState === "default" && (
 // // // //           <button
 // // // //             onClick={handleAddToCart}
-// // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white hover:bg-secondary transition shadow-md"
+// // // //             disabled={loading}
+// // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white disabled:opacity-60"
 // // // //           >
-// // // //             ADD TO BAG
+// // // //             {loading ? "ADDING..." : "ADD TO BAG"}
 // // // //           </button>
 // // // //         )}
 
-// // // //         {/* Added State */}
+// // // //         {/* ITEM ADDED */}
 // // // //         {buttonState === "added" && (
-// // // //           <button className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white shadow-lg">
+// // // //           <button className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white">
 // // // //             ITEM ADDED TO BAG
 // // // //           </button>
 // // // //         )}
 
-// // // //         {/* Go to Bag */}
+// // // //         {/* GO TO BAG */}
 // // // //         {buttonState === "goToBag" && (
-// // // //           <button
-// // // //             onClick={() => (window.location.href = "/cart")}
-// // // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white shadow-lg"
+// // // //           <Link
+// // // //             to="/cart"
+// // // //             className="w-full block text-center py-3 rounded-xl font-semibold text-lg bg-primary text-white"
 // // // //           >
 // // // //             GO TO BAG →
-// // // //           </button>
+// // // //           </Link>
 // // // //         )}
 
-// // // //         {/* Buy Now */}
+// // // //         {/* BUY NOW */}
 // // // //         <button
 // // // //           onClick={handleBuyNow}
-// // // //           className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white hover:bg-black transition shadow-md"
+// // // //           disabled={loading}
+// // // //           className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white disabled:opacity-60"
 // // // //         >
 // // // //           BUY NOW
 // // // //         </button>
@@ -551,105 +166,168 @@
 
 // // // import React, { useState, useEffect } from "react";
 // // // import SizeSelectModal from "./SizeSelectModal";
-// // // import { Link } from "react-router-dom";
+// // // import { Link, useNavigate, useLocation } from "react-router-dom";
+// // // import { useCart } from "../../../context/CartContext";
+// // // import api from "../../../api/axios";
 
-// // // const AddToCartSection = ({ product, quantity, selectedSize }) => {
-// // //   const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+// // // const AddToCartSection = ({
+// // //   product,
+// // //   quantity,
+// // //   selectedSize,
+// // //   availableSizes,
+// // // }) => {
+// // //   const sizes = availableSizes;
 
-// // //   // sync with main-page size
+// // //   const { addToCart, buyNow } = useCart();
+// // //   const navigate = useNavigate();
+// // //   const location = useLocation();
+
 // // //   const [internalSize, setInternalSize] = useState(selectedSize);
+// // //   const [showSizeModal, setShowSizeModal] = useState(false);
+// // //   const [buttonState, setButtonState] = useState("default");
+// // //   const [loading, setLoading] = useState(false);
 
 // // //   useEffect(() => {
 // // //     setInternalSize(selectedSize);
 // // //   }, [selectedSize]);
 
-// // //   const [showSizeModal, setShowSizeModal] = useState(false);
-// // //   const [buttonState, setButtonState] = useState("default");
-
+// // //   // 🎬 animation
 // // //   const startAddToCartAnimation = () => {
 // // //     setButtonState("added");
 // // //     setTimeout(() => setButtonState("goToBag"), 1500);
 // // //   };
 
-// // //   const handleAddToCart = () => {
-// // //     // ⭐ Main page size already selected → Don't open popup!
-// // //     if (internalSize) {
-// // //       startAddToCartAnimation();
-// // //       return;
-// // //     }
-
-// // //     // No size selected → show popup
-// // //     setShowSizeModal(true);
-// // //   };
-
-// // //   const handleBuyNow = () => {
+// // //   // 🧠 ADD TO CART (NO MANUAL AUTH CHECK)
+// // //   const handleAddToCart = async () => {
+// // //     // 1️⃣ Size required
 // // //     if (!internalSize) {
 // // //       setShowSizeModal(true);
 // // //       return;
 // // //     }
-// // //     window.location.href = "/checkout";
+
+// // //     try {
+// // //       setLoading(true);
+
+// // //       // 2️⃣ Backend decides auth
+// // //       await api.post("orders/cart/add", {
+// // //         product_id: product.id,
+// // //         quantity,
+// // //         // size: internalSize,
+// // //       });
+
+// // //       // 3️⃣ Update local cart
+// // //       addToCart(product, internalSize, quantity);
+
+// // //       // 4️⃣ UI animation
+// // //       startAddToCartAnimation();
+// // //     } catch (err) {
+// // //       // 🔐 Redirect only when auth truly fails
+// // //       if (err.response?.status === 401) {
+// // //         navigate("/login", {
+// // //           state: { from: location.pathname },
+// // //           replace: true,
+// // //         });
+// // //       } else {
+// // //         console.error("Add to cart error:", err);
+// // //         alert("Failed to add product to cart");
+// // //       }
+// // //     } finally {
+// // //       setLoading(false);
+// // //     }
 // // //   };
 
-// // //   const handleSizeSelectInsidePopup = (size) => {
-// // //     setInternalSize(size);
+// // //   // 🛒 BUY NOW
+// // //   const handleBuyNow = async () => {
+// // //     if (!internalSize) {
+// // //       setShowSizeModal(true);
+// // //       return;
+// // //     }
+
+// // //     try {
+// // //       setLoading(true);
+
+// // //       await api.post("/cart/add", {
+// // //         product_id: product.id,
+// // //         quantity,
+// // //         size: internalSize,
+// // //       });
+
+// // //       buyNow(product, internalSize, quantity);
+// // //       navigate("/checkout");
+// // //     } catch (err) {
+// // //       if (err.response?.status === 401) {
+// // //         navigate("/login", {
+// // //           state: { from: location.pathname },
+// // //           replace: true,
+// // //         });
+// // //       } else {
+// // //         alert("Buy Now failed");
+// // //       }
+// // //     } finally {
+// // //       setLoading(false);
+// // //     }
 // // //   };
 
+// // //   // Modal confirm
 // // //   const handlePopupConfirm = () => {
-// // //     if (!internalSize) return;
 // // //     setShowSizeModal(false);
-// // //     startAddToCartAnimation();
+// // //     handleAddToCart();
 // // //   };
 
 // // //   return (
 // // //     <>
-// // //       {/* <SizeSelectModal
-// // //         open={showSizeModal}
-// // //         sizes={sizes}
-// // //         selectedSize={internalSize}
-// // //         onSelectSize={handleSizeSelectInsidePopup}
-// // //         onConfirm={handlePopupConfirm}
-// // //       /> */}
 // // //       <SizeSelectModal
 // // //         open={showSizeModal}
 // // //         sizes={sizes}
 // // //         selectedSize={internalSize}
-// // //         onSelectSize={handleSizeSelectInsidePopup}
+// // //         onSelectSize={setInternalSize}
 // // //         onConfirm={handlePopupConfirm}
-// // //         onClose={() => setShowSizeModal(false)} // <-- FIX
+// // //         onClose={() => setShowSizeModal(false)}
 // // //       />
 
-// // // <div className="mt-6 w-full max-w-md flex flex-col gap-4">
-// // //   {buttonState === "default" && (
-// // //     <button
-// // //       onClick={handleAddToCart}
-// // //       className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white"
-// // //     >
-// // //       ADD TO BAG
-// // //     </button>
-// // //   )}
+// // //       <div className="mt-6 w-full max-w-md flex flex-col gap-4">
+// // //         {/* ADD TO BAG */}
+// // //         {buttonState === "default" && (
+// // //           <button
+// // //             type="button"
+// // //             onClick={handleAddToCart}
+// // //             disabled={loading}
+// // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white disabled:opacity-60"
+// // //           >
+// // //             {loading ? "ADDING..." : "ADD TO BAG"}
+// // //           </button>
+// // //         )}
 
-// // //   {buttonState === "added" && (
-// // //     <button className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white">
-// // //       ITEM ADDED TO BAG
-// // //     </button>
-// // //   )}
+// // //         {/* ITEM ADDED */}
+// // //         {buttonState === "added" && (
+// // //           <button
+// // //             type="button"
+// // //             className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white"
+// // //           >
+// // //             ITEM ADDED TO BAG
+// // //           </button>
+// // //         )}
 
-// // //   {buttonState === "goToBag" && (
-// // //     <Link
-// // //       to="/cart"
-// // //       className="w-full block text-center py-3 rounded-xl font-semibold text-lg bg-primary text-white"
-// // //     >
-// // //       GO TO BAG →
-// // //     </Link>
-// // //   )}
+// // //         {/* GO TO BAG */}
+// // //         {buttonState === "goToBag" && (
+// // //           <Link
+// // //             to="/cart"
+// // //             className="w-full block text-center py-3 rounded-xl font-semibold text-lg bg-primary text-white"
+// // //           >
+// // //             GO TO BAG →
+// // //           </Link>
+// // //         )}
 
-// // //   <button
-// // //     onClick={handleBuyNow}
-// // //     className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white"
-// // //   >
-// // //     BUY NOW
-// // //   </button>
-// // // </div>
+// // //         {/* BUY NOW */}
+// // //         <button
+// // //           type="button"
+// // //           onClick={handleBuyNow}
+// // //           disabled={loading}
+// // //           className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white disabled:opacity-60"
+// // //         >
+// // //           BUY NOW
+// // //         </button>
+// // //       </div>
 // // //     </>
 // // //   );
 // // // };
@@ -658,61 +336,113 @@
 
 // // import React, { useState, useEffect } from "react";
 // // import SizeSelectModal from "./SizeSelectModal";
-// // import { Link } from "react-router-dom";
-// // import { useCart } from "../../../context/CartContext"; // ⭐ import
+// // import { Link, useNavigate, useLocation } from "react-router-dom";
+// // import { useCart } from "../../../context/CartContext";
+// // import api from "../../../api/axios";
 
-// // const AddToCartSection = ({ product, quantity, selectedSize }) => {
-// //   const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+// // const AddToCartSection = ({
+// //   product,
+// //   quantity,
+// //   selectedSize,
+// //   availableSizes,
+// // }) => {
+// //   const sizes = availableSizes;
 
-// //   const { addToCart } = useCart(); // ⭐ get cart function
+// //   const { addToCart, buyNow } = useCart();
+// //   const navigate = useNavigate();
+// //   const location = useLocation();
 
 // //   const [internalSize, setInternalSize] = useState(selectedSize);
+// //   const [showSizeModal, setShowSizeModal] = useState(false);
+// //   const [buttonState, setButtonState] = useState("default");
+// //   const [loading, setLoading] = useState(false);
 
+// //   console.log("qntty :", quantity);
 // //   useEffect(() => {
 // //     setInternalSize(selectedSize);
 // //   }, [selectedSize]);
 
-// //   const [showSizeModal, setShowSizeModal] = useState(false);
-// //   const [buttonState, setButtonState] = useState("default");
-
+// //   // 🎬 Add-to-cart animation
 // //   const startAddToCartAnimation = () => {
 // //     setButtonState("added");
 // //     setTimeout(() => setButtonState("goToBag"), 1500);
 // //   };
 
-// //   const handleAddToCart = () => {
+// //   // =========================
+// //   // 🛒 ADD TO CART
+// //   // =========================
+// //   const handleAddToCart = async () => {
 // //     if (!internalSize) {
 // //       setShowSizeModal(true);
 // //       return;
 // //     }
 
-// //     // ⭐ REAL CART LOGIC
-// //     addToCart(product, internalSize, quantity);
+// //     try {
+// //       setLoading(true);
 
-// //     startAddToCartAnimation();
+// //       // ✅ SINGLE SOURCE OF TRUTH
+// //       const success = await addToCart(product.id, internalSize, quantity);
+
+// //       if (success) {
+// //         startAddToCartAnimation();
+// //       } else {
+// //         alert("Failed to add product to cart");
+// //       }
+// //     } catch (err) {
+// //       if (err.response?.status === 401) {
+// //         navigate("/login", {
+// //           state: { from: location.pathname },
+// //           replace: true,
+// //         });
+// //       } else {
+// //         console.error("Add to cart error:", err);
+// //       }
+// //     } finally {
+// //       setLoading(false);
+// //     }
 // //   };
 
-// //   const handleBuyNow = () => {
+// //   // =========================
+// //   // ⚡ BUY NOW
+// //   // =========================
+// //   const handleBuyNow = async () => {
 // //     if (!internalSize) {
 // //       setShowSizeModal(true);
 // //       return;
 // //     }
 
-// //     window.location.href = "/checkout";
+// //     try {
+// //       setLoading(true);
+// //       // ✅ SAME BACKEND ENDPOINT
+// //       await api.post("/orders/cart/add/", {
+// //         product_id: product.id,
+// //         quantity,
+// //         // size: internalSize,
+// //       });
+
+// //       buyNow(product, internalSize, quantity);
+// //       navigate("/checkout");
+// //     } catch (err) {
+// //       if (err.response?.status === 401) {
+// //         navigate("/login", {
+// //           state: { from: location.pathname },
+// //           replace: true,
+// //         });
+// //       } else {
+// //         console.error("Buy now error:", err);
+// //         alert("Buy Now failed");
+// //       }
+// //     } finally {
+// //       setLoading(false);
+// //     }
 // //   };
 
-// //   const handleSizeSelectInsidePopup = (size) => {
-// //     setInternalSize(size);
-// //   };
-
+// //   // =========================
+// //   // SIZE MODAL CONFIRM
+// //   // =========================
 // //   const handlePopupConfirm = () => {
-// //     if (!internalSize) return;
-
-// //     // ⭐ REAL CART LOGIC
-// //     addToCart(product, internalSize, quantity);
-
 // //     setShowSizeModal(false);
-// //     startAddToCartAnimation();
+// //     handleAddToCart();
 // //   };
 
 // //   return (
@@ -721,27 +451,35 @@
 // //         open={showSizeModal}
 // //         sizes={sizes}
 // //         selectedSize={internalSize}
-// //         onSelectSize={handleSizeSelectInsidePopup}
+// //         onSelectSize={setInternalSize}
 // //         onConfirm={handlePopupConfirm}
 // //         onClose={() => setShowSizeModal(false)}
 // //       />
 
 // //       <div className="mt-6 w-full max-w-md flex flex-col gap-4">
+// //         {/* ADD TO BAG */}
 // //         {buttonState === "default" && (
 // //           <button
+// //             type="button"
 // //             onClick={handleAddToCart}
-// //             className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white"
+// //             disabled={loading}
+// //             className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white disabled:opacity-60"
 // //           >
-// //             ADD TO BAG
+// //             {loading ? "ADDING..." : "ADD TO BAG"}
 // //           </button>
 // //         )}
 
+// //         {/* ITEM ADDED */}
 // //         {buttonState === "added" && (
-// //           <button className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white">
+// //           <button
+// //             type="button"
+// //             className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white"
+// //           >
 // //             ITEM ADDED TO BAG
 // //           </button>
 // //         )}
 
+// //         {/* GO TO BAG */}
 // //         {buttonState === "goToBag" && (
 // //           <Link
 // //             to="/cart"
@@ -751,9 +489,12 @@
 // //           </Link>
 // //         )}
 
+// //         {/* BUY NOW */}
 // //         <button
+// //           type="button"
 // //           onClick={handleBuyNow}
-// //           className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white"
+// //           disabled={loading}
+// //           className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white disabled:opacity-60"
 // //         >
 // //           BUY NOW
 // //         </button>
@@ -766,104 +507,135 @@
 
 // import React, { useState, useEffect } from "react";
 // import SizeSelectModal from "./SizeSelectModal";
-// import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate, useLocation } from "react-router-dom";
 // import { useCart } from "../../../context/CartContext";
 
-// const AddToCartSection = ({ product, quantity, selectedSize }) => {
-//   const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+// const AddToCartSection = ({
+//   product,
+//   quantity,
+//   selectedSize,
+//   availableSizes,
+// }) => {
+//   const sizes = availableSizes;
 
-//   const { addToCart, buyNow } = useCart(); // ⭐ buyNow added
+//   const { addToCart, setBuyNow } = useCart(); // ✅ UPDATED
 //   const navigate = useNavigate();
+//   const location = useLocation();
 
 //   const [internalSize, setInternalSize] = useState(selectedSize);
+//   const [showSizeModal, setShowSizeModal] = useState(false);
+//   const [buttonState, setButtonState] = useState("default");
+//   const [loading, setLoading] = useState(false);
 
 //   useEffect(() => {
 //     setInternalSize(selectedSize);
 //   }, [selectedSize]);
 
-//   const [showSizeModal, setShowSizeModal] = useState(false);
-//   const [buttonState, setButtonState] = useState("default");
-
+//   // 🎬 Add-to-cart animation
 //   const startAddToCartAnimation = () => {
 //     setButtonState("added");
 //     setTimeout(() => setButtonState("goToBag"), 1500);
 //   };
 
-//   // ADD TO CART
-//   const handleAddToCart = () => {
+//   // =========================
+//   // 🛒 ADD TO CART
+//   // =========================
+//   const handleAddToCart = async () => {
 //     if (!internalSize) {
 //       setShowSizeModal(true);
 //       return;
 //     }
 
-//     addToCart(product, internalSize, quantity);
-//     startAddToCartAnimation();
+//     try {
+//       setLoading(true);
+
+//       const success = await addToCart(product.id, internalSize, quantity);
+
+//       if (success) {
+//         startAddToCartAnimation();
+//       } else {
+//         alert("Failed to add product to cart");
+//       }
+//     } catch (err) {
+//       if (err.response?.status === 401) {
+//         navigate("/login", {
+//           state: { from: location.pathname },
+//           replace: true,
+//         });
+//       } else {
+//         console.error("Add to cart error:", err);
+//       }
+//     } finally {
+//       setLoading(false);
+//     }
 //   };
 
-//   // BUY NOW (MAIN FIX)
+//   // =========================
+//   // ⚡ BUY NOW (NO API CALL)
+//   // =========================
 //   const handleBuyNow = () => {
 //     if (!internalSize) {
 //       setShowSizeModal(true);
 //       return;
 //     }
 
-//     buyNow(product, internalSize, quantity); // ⭐ store item for checkout
-//     navigate("/checkout"); // ⭐ go to checkout
+//     // ✅ TEMP STORE BUY NOW ITEM
+//     setBuyNow({
+//       id: product.id,
+//       title: product.title || product.name,
+//       image: product.image || product.main_image,
+//       price: product.price,
+//       size: internalSize,
+//       qty: quantity,
+//       deliveryDate: "3–5 days",
+//     });
+
+//     navigate("/checkout");
 //   };
 
-//   const handleSizeSelectInsidePopup = (size) => {
-//     setInternalSize(size);
-//   };
-
+//   // =========================
+//   // SIZE MODAL CONFIRM
+//   // =========================
 //   const handlePopupConfirm = () => {
-//     if (!internalSize) return;
-
-//     // If popup came from ADD TO CART
-//     if (buttonState === "default") {
-//       addToCart(product, internalSize, quantity);
-//       startAddToCartAnimation();
-//     }
-
-//     // If popup came from BUY NOW
-//     if (buttonState === "buy") {
-//       buyNow(product, internalSize, quantity);
-//       navigate("/checkout");
-//     }
-
 //     setShowSizeModal(false);
+//     handleAddToCart();
 //   };
 
 //   return (
 //     <>
-//       {/* SIZE POPUP */}
 //       <SizeSelectModal
 //         open={showSizeModal}
 //         sizes={sizes}
 //         selectedSize={internalSize}
-//         onSelectSize={handleSizeSelectInsidePopup}
+//         onSelectSize={setInternalSize}
 //         onConfirm={handlePopupConfirm}
 //         onClose={() => setShowSizeModal(false)}
 //       />
 
 //       <div className="mt-6 w-full max-w-md flex flex-col gap-4">
-//         {/* Add to Bag */}
+//         {/* ADD TO BAG */}
 //         {buttonState === "default" && (
 //           <button
+//             type="button"
 //             onClick={handleAddToCart}
-//             className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white"
+//             disabled={loading}
+//             className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white disabled:opacity-60"
 //           >
-//             ADD TO BAG
+//             {loading ? "ADDING..." : "ADD TO BAG"}
 //           </button>
 //         )}
 
-//         {/* Added animation */}
+//         {/* ITEM ADDED */}
 //         {buttonState === "added" && (
-//           <button className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white">
+//           <button
+//             type="button"
+//             className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white"
+//           >
 //             ITEM ADDED TO BAG
 //           </button>
 //         )}
 
-//         {/* Go to Bag */}
+//         {/* GO TO BAG */}
 //         {buttonState === "goToBag" && (
 //           <Link
 //             to="/cart"
@@ -875,11 +647,10 @@
 
 //         {/* BUY NOW */}
 //         <button
-//           onClick={() => {
-//             setButtonState("buy");
-//             handleBuyNow();
-//           }}
-//           className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white"
+//           type="button"
+//           onClick={handleBuyNow}
+//           disabled={loading}
+//           className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white disabled:opacity-60"
 //         >
 //           BUY NOW
 //         </button>
@@ -892,7 +663,7 @@
 
 import React, { useState, useEffect } from "react";
 import SizeSelectModal from "./SizeSelectModal";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useCart } from "../../../context/CartContext";
 
 const AddToCartSection = ({
@@ -901,99 +672,129 @@ const AddToCartSection = ({
   selectedSize,
   availableSizes,
 }) => {
-  const sizes = availableSizes; // << use backend sizes only
+  const sizes = availableSizes;
 
-  const { addToCart, buyNow } = useCart(); // ⭐ includes buyNow
+  const { addToCart, setBuyNow } = useCart();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [internalSize, setInternalSize] = useState(selectedSize);
   const [showSizeModal, setShowSizeModal] = useState(false);
   const [buttonState, setButtonState] = useState("default");
+  const [loading, setLoading] = useState(false);
+  const [actionType, setActionType] = useState(null); // ✅ NEW
 
   useEffect(() => {
     setInternalSize(selectedSize);
   }, [selectedSize]);
 
-  // ADD TO CART animation
+  // 🎬 Add-to-cart animation
   const startAddToCartAnimation = () => {
     setButtonState("added");
     setTimeout(() => setButtonState("goToBag"), 1500);
   };
 
-  // ADD TO CART FLOW
-  const handleAddToCart = () => {
+  // =========================
+  // 🛒 ADD TO CART
+  // =========================
+  const handleAddToCart = async () => {
     if (!internalSize) {
-      setButtonState("default");
+      setActionType("add"); // ✅ mark intent
       setShowSizeModal(true);
       return;
     }
 
-    addToCart(product, internalSize, quantity);
-    startAddToCartAnimation();
+    try {
+      setLoading(true);
+      const success = await addToCart(product.id, internalSize, quantity);
+
+      if (success) {
+        startAddToCartAnimation();
+      }
+    } catch (err) {
+      if (err.response?.status === 401) {
+        navigate("/login", {
+          state: { from: location.pathname },
+          replace: true,
+        });
+      } else {
+        console.error("Add to cart error:", err);
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
-  // BUY NOW FLOW
+  // =========================
+  // ⚡ BUY NOW (NO CART ADD)
+  // =========================
   const handleBuyNow = () => {
     if (!internalSize) {
-      setButtonState("buy");
+      setActionType("buy"); // ✅ mark intent
       setShowSizeModal(true);
       return;
     }
 
-    buyNow(product, internalSize, quantity); // ⭐ store item for checkout
+    setBuyNow({
+      id: product.id,
+      title: product.title || product.name,
+      image: product.image || product.main_image,
+      price: product.price,
+      size: internalSize,
+      qty: quantity,
+      deliveryDate: "3–5 days",
+    });
+
     navigate("/checkout");
   };
 
-  // POPUP → Select Size
-  const handleSizeSelectInsidePopup = (size) => {
-    setInternalSize(size);
-  };
-
-  // POPUP CONFIRM BUTTON
+  // =========================
+  // SIZE MODAL CONFIRM (FIX)
+  // =========================
   const handlePopupConfirm = () => {
-    if (!internalSize) return;
-
-    // came from ADD TO CART
-    if (buttonState === "default") {
-      addToCart(product, internalSize, quantity);
-      startAddToCartAnimation();
-    }
-
-    // came from BUY NOW
-    if (buttonState === "buy") {
-      buyNow(product, internalSize, quantity);
-      navigate("/checkout");
-    }
-
     setShowSizeModal(false);
+
+    if (actionType === "add") {
+      handleAddToCart();
+    }
+
+    if (actionType === "buy") {
+      handleBuyNow();
+    }
+
+    setActionType(null);
   };
 
   return (
     <>
-      {/* SIZE SELECT POPUP */}
       <SizeSelectModal
         open={showSizeModal}
         sizes={sizes}
         selectedSize={internalSize}
-        onSelectSize={handleSizeSelectInsidePopup}
+        onSelectSize={setInternalSize}
         onConfirm={handlePopupConfirm}
         onClose={() => setShowSizeModal(false)}
       />
 
       <div className="mt-6 w-full max-w-md flex flex-col gap-4">
-        {/* ADD TO BAG BUTTON */}
+        {/* ADD TO BAG */}
         {buttonState === "default" && (
           <button
+            type="button"
             onClick={handleAddToCart}
-            className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white"
+            disabled={loading}
+            className="w-full py-3 rounded-xl font-semibold text-lg bg-primary text-white disabled:opacity-60"
           >
-            ADD TO BAG
+            {loading ? "ADDING..." : "ADD TO BAG"}
           </button>
         )}
 
         {/* ITEM ADDED */}
         {buttonState === "added" && (
-          <button className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white">
+          <button
+            type="button"
+            className="w-full py-3 rounded-xl font-semibold text-lg bg-secondary text-white"
+          >
             ITEM ADDED TO BAG
           </button>
         )}
@@ -1008,13 +809,12 @@ const AddToCartSection = ({
           </Link>
         )}
 
-        {/* BUY NOW BUTTON */}
+        {/* BUY NOW */}
         <button
-          onClick={() => {
-            setButtonState("buy");
-            handleBuyNow();
-          }}
-          className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white"
+          type="button"
+          onClick={handleBuyNow}
+          disabled={loading}
+          className="w-full py-3 rounded-xl font-semibold text-lg bg-dark text-white disabled:opacity-60"
         >
           BUY NOW
         </button>
