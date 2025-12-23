@@ -34,7 +34,7 @@ const Help = () => {
 
           <div className="border border-rose-200 bg-rose-50 rounded-xl p-4">
             <p className="text-gray-700 font-medium text-lg">✉️ Email</p>
-            <p className="text-gray-600 text-sm mt-1">support@saptrangi.com</p>
+            <p className="text-gray-600 text-sm mt-1">support@saajnika.com</p>
           </div>
         </div>
 

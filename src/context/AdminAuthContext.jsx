@@ -9,7 +9,7 @@ export const AdminAuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     // 🔥 Hardcoded admin login for now (you can replace with backend later)
-    if (email === "admin@saptrangi.com" && password === "admin123") {
+    if (email === "admin@saajnika.com" && password === "admin123") {
       const adminData = {
         email,
         role: "admin",

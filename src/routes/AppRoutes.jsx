@@ -8,6 +8,7 @@ import CartPage from "../pages/Cart/CartPage";
 import AboutUs from "../pages/Company/AboutUs";
 import TermsConditions from "../pages/Company/TermsConditions";
 import PrivacyPolicy from "../pages/Company/PrivacyPolicy";
+import SearchResults from "../pages/Search/SearchResults";
 
 import AdminLayout from "../admin/layout/AdminLayout";
 // import AdminDashboard from "../admin/layout/AdminDashboard";
@@ -16,6 +17,7 @@ import AdminRoute from "../components/auth/AdminRoute";
 
 // Protected pages
 import CheckoutPage from "../pages/Checkout/CheckoutPage";
+import Checkout from "../pages/Checkout/Checkout";
 import AccountPage from "../pages/Account/AccountPage";
 import Orders from "../pages/Account/sections/Orders";
 import OrderDetails from "../pages/Account/sections/OrderDetails";
@@ -49,6 +51,7 @@ function App() {
       <Route path="/collection/:productSlug" element={<ProductDetails />} />
 
       <Route path="/category/:categorySlug" element={<CategoryPage />} />
+      <Route path="/search" element={<SearchResults />} />
 
       <Route path="/about" element={<AboutUs />} />
       <Route path="/terms" element={<TermsConditions />} />

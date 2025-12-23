@@ -122,7 +122,7 @@ const MobileMenu = ({ open, onClose }) => {
 
         {/* Footer */}
         <div className="absolute bottom-0 left-0 w-full bg-primary text-white text-center py-3 text-sm font-medium tracking-wide">
-          Saptrangi Kurti & Sarees © 2025
+          Saajnika Kurti & Sarees © 2025
         </div>
       </div>
     </div>

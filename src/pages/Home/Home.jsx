@@ -43,7 +43,7 @@
 //     return (
 //       <div className="h-screen flex flex-col items-center justify-center bg-neutral-50">
 //         <h1 className="text-3xl font-bold text-pink-600 tracking-widest animate-pulse">
-//           SAPTRANGI
+//           SAAJNIKA
 //         </h1>
 
 //         <div className="mt-4 w-40 h-1 bg-pink-200 overflow-hidden rounded-full">
@@ -124,7 +124,7 @@ const Home = () => {
     const fetchHomeData = async () => {
       try {
         const response = await api.get("/products/home/");
-        console.log(response);
+        // console.log(response);
         setData(response.data);
       } catch (err) {
         console.error("Home API Error:", err);
@@ -142,7 +142,7 @@ const Home = () => {
     return (
       <div className="h-screen flex flex-col items-center justify-center bg-neutral-50">
         <h1 className="text-3xl font-bold text-pink-600 tracking-widest animate-pulse">
-          SAPTRANGI
+          SAAJNIKA
         </h1>
 
         <div className="mt-4 w-40 h-1 bg-pink-200 overflow-hidden rounded-full">

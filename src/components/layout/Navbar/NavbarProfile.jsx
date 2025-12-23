@@ -133,7 +133,7 @@
 
 //           {/* Footer */}
 //           <div className="border-t px-4 py-2 text-[11px] text-gray-500 uppercase">
-//             © 2025 Saptrangi Kurti & Sarees
+//             © 2025 Saajnika Kurti & Sarees
 //           </div>
 //         </div>
 //       )}
@@ -155,7 +155,7 @@ const NavbarProfile = () => {
 
   const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
-
+  // console.log(user);
   const profileItems = [
     {
       label: "Account",
@@ -247,7 +247,7 @@ const NavbarProfile = () => {
         >
           <User size={16} className="text-primary" />
           <span className="text-sm font-semibold">
-            {user?.firstName || "Account"}
+            {user?.first_name || "Account"}
           </span>
         </div>
       )}
@@ -278,7 +278,7 @@ const NavbarProfile = () => {
         >
           {/* Header */}
           <div className="px-4 py-2 bg-secondary text-white text-sm font-semibold uppercase rounded-t-md">
-            {user?.firstName ? `Welcome, ${user.firstName}` : "WELCOME"}
+            {user?.first_name ? `Welcome, ${user.first_name}` : "WELCOME"}
           </div>
 
           {/* Menu Items */}
@@ -306,7 +306,7 @@ const NavbarProfile = () => {
 
           {/* Footer */}
           <div className="border-t px-4 py-2 text-[11px] text-gray-500 uppercase">
-            © 2025 Saptrangi Kurti & Sarees
+            © 2025 Saajnika Kurti & Sarees
           </div>
         </div>
       )}

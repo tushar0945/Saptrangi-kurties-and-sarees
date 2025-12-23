@@ -61,7 +61,7 @@
 // // // // //     setCheckoutItem({
 // // // // //       id: product.id,
 // // // // //       title: product.title,
-// // // // //       brand: product.brand || "Saptrangi",
+// // // // //       brand: product.brand || "Saajnika",
 // // // // //       price: product.price,
 // // // // //       image: product.image || product.extraImages?.[0],
 // // // // //       size,
@@ -664,7 +664,7 @@ export const CartProvider = ({ children }) => {
   const fetchCart = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await api.get("/orders/cart/");
+      const res = await api.get("/cart/items");
       setCart(res.data?.cart || []);
       return true;
     } catch (err) {
@@ -685,7 +685,7 @@ export const CartProvider = ({ children }) => {
   // =========================
   const addToCart = async (productId, size, quantity = 1) => {
     try {
-      await api.post("/orders/cart/add/", {
+      await api.post("/cart/add/", {
         product_id: productId,
         size,
         quantity,
@@ -716,7 +716,7 @@ export const CartProvider = ({ children }) => {
     const prevCart = [...cart];
 
     try {
-      await api.put("/orders/cart/update-quantity/", {
+      await api.put("/cart/update/quantity/", {
         cart_id: cartItemId,
         quantity,
       });
@@ -743,7 +743,7 @@ export const CartProvider = ({ children }) => {
     const prevCart = [...cart];
 
     try {
-      await api.put("/orders/cart/update-size/", {
+      await api.put("cart/update/size/", {
         cart_id: cartItemId,
         size,
       });
@@ -767,7 +767,7 @@ export const CartProvider = ({ children }) => {
     const prevCart = [...cart];
 
     try {
-      await api.delete(`/orders/cart/remove/${cartItemId}`);
+      await api.delete(`/cart/remove/${cartItemId}`);
 
       setCart((prev) => prev.filter((item) => item.id !== cartItemId));
       return true;

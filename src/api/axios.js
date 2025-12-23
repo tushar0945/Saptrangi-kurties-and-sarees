@@ -221,7 +221,7 @@ api.interceptors.response.use(
     }
 
     // ❌ If refresh endpoint itself failed → STOP
-    if (originalRequest?.url?.includes("/auth/auth/refresh")) {
+    if (originalRequest?.url?.includes("/auth/refresh")) {
       console.warn("❌ Refresh endpoint failed. Skipping retry.");
       return Promise.reject(error);
     }

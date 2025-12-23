@@ -135,6 +135,7 @@ import AddressList from "./AddressList";
 import AddAddressForm from "./AddAddressForm";
 import EditAddressForm from "./EditAddressForm";
 import { AddressService } from "../../../services/addressService";
+import FullPageLoader from "../../../components/common/FullPageLoader";
 
 const Addresses = () => {
   const [searchParams] = useSearchParams();
@@ -178,11 +179,7 @@ const Addresses = () => {
       : null;
 
   if (loading) {
-    return (
-      <div className="flex justify-center py-20 text-gray-500">
-        Loading addresses...
-      </div>
-    );
+    return <FullPageLoader />;
   }
 
   return (

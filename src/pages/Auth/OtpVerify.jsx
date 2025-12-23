@@ -230,7 +230,7 @@ const OtpVerify = () => {
       setLoading(true);
       setError("");
 
-      const res = await api.post("auth/auth/verify-otp/", {
+      const res = await api.post("/auth/verify-otp/", {
         mobile: phone,
         otp: enteredOTP,
       });

@@ -21,7 +21,7 @@ const PhoneLogin = () => {
     try {
       setLoading(true);
       console.log(mobileWithCountryCode);
-      const res = await api.post("auth/auth/send-otp/", {
+      const res = await api.post("auth/send-otp/", {
         mobile: mobileWithCountryCode,
       });
 
@@ -53,7 +53,7 @@ const PhoneLogin = () => {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-800 text-center">
-          Welcome to SaptRangi
+          Welcome to Saajnika
         </h2>
         <p className="text-gray-500 text-center mt-1">
           Enter your mobile number to continue

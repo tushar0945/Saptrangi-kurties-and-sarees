@@ -189,13 +189,13 @@ const CartSummary = ({ cartItems = [] }) => {
       {/* ---------- FREE DELIVERY ---------- */}
       <div className="mt-4 bg-green-100 text-center py-2 rounded-md text-sm">
         Yayyy! You get{" "}
-        <span className="font-semibold text-green-600">FREE delivery</span> on
+        <span className="font-semibold text-green-600">FREE shipping</span> on
         this order
       </div>
 
       {/* ---------- PROCEED ---------- */}
       <Link to="/checkout">
-        <button className="w-full bg-yellow-400 py-3 mt-5 rounded-lg font-semibold text-lg text-dark hover:bg-yellow-500 transition-all active:scale-[0.98]">
+        <button className="w-full bg-primary py-3 mt-5 rounded-lg font-semibold text-lg text-white hover:bg-secondary transition-all active:scale-[0.98]">
           PROCEED
         </button>
       </Link>

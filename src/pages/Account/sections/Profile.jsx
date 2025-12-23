@@ -407,7 +407,7 @@ const Profile = () => {
     try {
       setSaving(true);
 
-      const res = await api.put("auth/profile/update/", {
+      const res = await api.put("/users/me/update/", {
         first_name: profile.first_name,
         last_name: profile.last_name,
         gender: profile.gender,

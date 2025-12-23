@@ -8,7 +8,7 @@ const NavbarMenu = () => {
 
   const menuItems = [
     {
-      title: "Kurtis",
+      title: "KURTIES",
       dropdown: [
         { label: "Designer Kurties", slug: "kurti" },
         { label: "straight-cut Kurties", slug: "straight-cut-sarees" },
@@ -17,7 +17,7 @@ const NavbarMenu = () => {
       ],
     },
     {
-      title: "Sarees",
+      title: "SAREES",
       dropdown: [
         { label: "Banarasi", slug: "men-shirts" },
         { label: "Kanjeevaram", slug: "men-jeans" },
@@ -30,7 +30,7 @@ const NavbarMenu = () => {
       ],
     },
     {
-      title: "Lehengas",
+      title: "LEHENGAS",
       dropdown: [
         { label: "Circular", slug: "lehenga" },
         { label: "Flared", slug: "kids-boys" },

@@ -4,7 +4,7 @@
 //   theme: {
 //     extend: {
 //       colors: {
-//         // 🌸 Brand Palette — Saptrangi Kurti & Sarees
+//         // 🌸 Brand Palette — saajnika Kurti & Sarees
 //         primary: "#DC4B82", // Soft Pink – accent / CTA
 //         secondary: "#E283A5", // Light Blush – highlights
 //         neutral: "#E9EBEA", // Gentle Grey – 🌿 Main Background
@@ -28,7 +28,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 🌸 Brand Palette — Saptrangi Kurti & Sarees
+        // 🌸 Brand Palette — Saajnika Kurti & Sarees
         primary: "#DC4B82", // Soft Pink – accent / CTA
         secondary: "#E283A5", // Light Blush – highlights
         neutral: "#E9EBEA", // Gentle Grey – 🌿 Main Background
