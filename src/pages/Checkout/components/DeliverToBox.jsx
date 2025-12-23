@@ -75,7 +75,7 @@
 // export default DeliverToBox;
 
 import React, { useEffect, useState } from "react";
-import { AddressService } from "../../../services/AddressService";
+import { AddressService } from "../../../services/addressService";
 import AddressModal from "./AddressModal";
 
 const DeliverToBox = ({ onAddressChange }) => {
