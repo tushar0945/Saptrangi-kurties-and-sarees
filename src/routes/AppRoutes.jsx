@@ -17,6 +17,7 @@ import AdminRoute from "../components/auth/AdminRoute";
 
 // Protected pages
 import CheckoutPage from "../pages/Checkout/CheckoutPage";
+import OrderSuccess from "../pages/OrderSuccess/OrderSuccess";
 import Checkout from "../pages/Checkout/Checkout";
 import AccountPage from "../pages/Account/AccountPage";
 import Orders from "../pages/Account/sections/Orders";
@@ -80,6 +81,14 @@ function App() {
         element={
           <PrivateRoute>
             <CheckoutPage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/order-success"
+        element={
+          <PrivateRoute>
+            <OrderSuccess />
           </PrivateRoute>
         }
       />

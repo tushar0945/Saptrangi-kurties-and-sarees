@@ -74,24 +74,90 @@
 
 // export default DeliverToBox;
 
-import React, { useEffect, useState } from "react";
-import { AddressService } from "../../../services/addressService";
+// import React, { useEffect, useState } from "react";
+// import { AddressService } from "../../../services/addressService";
+// import AddressModal from "./AddressModal";
+
+// const DeliverToBox = ({ onAddressChange }) => {
+//   const [addresses, setAddresses] = useState([]);
+//   const [selected, setSelected] = useState(null);
+//   const [open, setOpen] = useState(false);
+
+//   useEffect(() => {
+//     AddressService.getAddresses().then((res) => {
+//       if (res && res.length) {
+//         setAddresses(res);
+//         setSelected(res[0]); // ✅ first address default
+//         onAddressChange?.(res[0]); // ✅ send to parent
+//       }
+//     });
+//   }, []);
+
+//   if (!selected) return null;
+
+//   return (
+//     <>
+//       <div className="bg-white border rounded-lg p-4 flex justify-between items-start">
+//         <div>
+//           {/* NAME + LABEL */}
+//           <p className="font-semibold">
+//             {selected.name}
+//             <span className="ml-2 text-xs text-gray-500">
+//               ({selected.address_type})
+//             </span>
+//           </p>
+
+//           {/* FULL ADDRESS */}
+//           <p className="text-sm text-gray-600 mt-1">
+//             {selected.street}, {selected.area}
+//           </p>
+
+//           {selected.landmark && (
+//             <p className="text-sm text-gray-600">
+//               Landmark: {selected.landmark}
+//             </p>
+//           )}
+
+//           <p className="text-sm text-gray-600">
+//             {selected.city}, {selected.state} - {selected.pincode}
+//           </p>
+
+//           <p className="text-sm text-gray-600 mt-1">
+//             Mobile: {selected.mobile}
+//           </p>
+//         </div>
+
+//         <button
+//           onClick={() => setOpen(true)}
+//           className="text-teal-600 font-medium text-sm"
+//         >
+//           CHANGE
+//         </button>
+//       </div>
+
+//       {open && (
+//         <AddressModal
+//           addresses={addresses}
+//           selected={selected}
+//           onSelect={(addr) => {
+//             setSelected(addr);
+//             onAddressChange?.(addr); // ✅ update parent
+//             setOpen(false);
+//           }}
+//           onClose={() => setOpen(false)}
+//         />
+//       )}
+//     </>
+//   );
+// };
+
+// export default DeliverToBox;
+
+import React, { useState } from "react";
 import AddressModal from "./AddressModal";
 
-const DeliverToBox = ({ onAddressChange }) => {
-  const [addresses, setAddresses] = useState([]);
-  const [selected, setSelected] = useState(null);
+const DeliverToBox = ({ addresses = [], selected, onSelect }) => {
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    AddressService.getAddresses().then((res) => {
-      if (res && res.length) {
-        setAddresses(res);
-        setSelected(res[0]); // ✅ first address default
-        onAddressChange?.(res[0]); // ✅ send to parent
-      }
-    });
-  }, []);
 
   if (!selected) return null;
 
@@ -140,8 +206,7 @@ const DeliverToBox = ({ onAddressChange }) => {
           addresses={addresses}
           selected={selected}
           onSelect={(addr) => {
-            setSelected(addr);
-            onAddressChange?.(addr); // ✅ update parent
+            onSelect(addr); // 🔥 update CheckoutPage
             setOpen(false);
           }}
           onClose={() => setOpen(false)}
