@@ -1699,12 +1699,13 @@ const CheckoutPage = () => {
         description: "Order Payment",
 
         // 🔥 IMPORTANT FOR PRODUCTION
-        redirect: true,
 
         // Razorpay will hit this BACKEND URL
         callback_url: `${
-          import.meta.env.VITE_API_BASE_URL
+          import.meta.env.VITE_BACKEND_URL
         }/payments/razorpay/verify/`,
+
+        redirect: true,
 
         modal: {
           ondismiss: () => setLoading(false),
