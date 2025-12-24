@@ -1503,7 +1503,7 @@ const CheckoutPage = () => {
         // Razorpay will hit this BACKEND URL
         callback_url: `${
           import.meta.env.VITE_BACKEND_URL
-        }/payments/razorpay/verify/`,
+        }/payments/razorpay/callback/`,
 
         redirect: true,
 
