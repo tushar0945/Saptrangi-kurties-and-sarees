@@ -162,6 +162,7 @@ const ProductDetails = () => {
     const fetchProduct = async () => {
       try {
         const res = await api.get(`/products/details/${productSlug}/`);
+        console.log(res);
         setProduct(res.data);
       } catch (err) {
         console.error(err);

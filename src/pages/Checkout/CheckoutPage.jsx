@@ -1372,6 +1372,193 @@
 
 // export default CheckoutPage;
 
+// import React, { useEffect, useState } from "react";
+// import { useCart } from "../../context/CartContext";
+// import OrderSummary from "./components/OrderSummary";
+// import api from "../../api/axios";
+// import { AddressService } from "../../services/addressService";
+
+// /**
+//  * Normalize checkout items
+//  */
+// const normalizeCheckoutItems = (items, type) => {
+//   if (!items || items.length === 0) return [];
+
+//   if (type === "buyNow") {
+//     return items.map((item) => ({
+//       id: item.id,
+//       name: item.title,
+//       image: item.image,
+//       price: item.price,
+//       mrp: item.price,
+//       quantity: item.qty,
+//       size: item.size,
+//     }));
+//   }
+
+//   return items.map((item) => ({
+//     id: item.id,
+//     name: item.product_details?.name,
+//     image:
+//       item.product_details?.main_image || item.product_details?.hover_image,
+//     price: item.product_details?.price,
+//     mrp: item.product_details?.mrp,
+//     quantity: item.quantity,
+//     size: item.size,
+//   }));
+// };
+
+// const CheckoutPage = () => {
+//   const { cart, buyNowItem } = useCart();
+
+//   const [loading, setLoading] = useState(false);
+
+//   // 📦 Address state
+//   const [addresses, setAddresses] = useState([]);
+//   const [selectedAddress, setSelectedAddress] = useState(null);
+
+//   /**
+//    * Fetch addresses
+//    */
+//   useEffect(() => {
+//     AddressService.getAddresses()
+//       .then((res) => {
+//         if (res?.length) {
+//           setAddresses(res);
+//           setSelectedAddress(res[0]);
+//         }
+//       })
+//       .catch(() => console.error("Failed to load addresses"));
+//   }, []);
+
+//   /**
+//    * Decide checkout items
+//    */
+//   const checkoutItems = buyNowItem
+//     ? normalizeCheckoutItems(buyNowItem, "buyNow")
+//     : normalizeCheckoutItems(cart, "cart");
+
+//   /**
+//    * Load Razorpay script
+//    */
+//   const loadRazorpayScript = () =>
+//     new Promise((resolve) => {
+//       if (window.Razorpay) return resolve(true);
+
+//       const script = document.createElement("script");
+//       script.src = "https://checkout.razorpay.com/v1/checkout.js";
+//       script.onload = () => resolve(true);
+//       script.onerror = () => resolve(false);
+//       document.body.appendChild(script);
+//     });
+
+//   /**
+//    * Handle payment (REDIRECT FLOW)
+//    */
+//   const handlePayNow = async () => {
+//     if (loading) return;
+
+//     if (!selectedAddress) {
+//       alert("Please select delivery address");
+//       return;
+//     }
+
+//     if (!checkoutItems.length) {
+//       alert("No items to checkout");
+//       return;
+//     }
+
+//     setLoading(true);
+
+//     const sdkLoaded = await loadRazorpayScript();
+//     if (!sdkLoaded) {
+//       alert("Razorpay SDK failed to load");
+//       setLoading(false);
+//       return;
+//     }
+
+//     try {
+//       const item = checkoutItems[0];
+
+//       // 1️⃣ Create order on backend
+//       const { data } = await api.post("/payments/razorpay/create/", {
+//         product_id: item.id,
+//         size: item.size,
+//         quantity: item.quantity,
+//         address_id: selectedAddress.id,
+//       });
+//       console.log(import.meta.env.VITE_BACKEND_URL);
+//       // 2️⃣ Razorpay REDIRECT options (🔥 FIX)
+//       const options = {
+//         key: data.razorpay.key,
+//         amount: data.razorpay.amount,
+//         currency: data.razorpay.currency,
+//         order_id: data.razorpay.razorpay_order_id,
+
+//         name: "SaajNika",
+//         description: "Order Payment",
+
+//         // 🔥 IMPORTANT FOR PRODUCTION
+
+//         // Razorpay will hit this BACKEND URL
+//         callback_url: `${
+//           import.meta.env.VITE_BACKEND_URL
+//         }/payments/razorpay/callback/`,
+
+//         redirect: true,
+
+//         modal: {
+//           ondismiss: () => setLoading(false),
+//         },
+
+//         theme: {
+//           color: "#0f766e",
+//         },
+//       };
+
+//       const rzp = new window.Razorpay(options);
+//       rzp.open();
+//     } catch (err) {
+//       console.error(err);
+//       alert("Payment failed. Please try again.");
+//       setLoading(false);
+//     }
+//   };
+
+//   /**
+//    * Empty checkout
+//    */
+//   if (!checkoutItems.length) {
+//     return (
+//       <div className="h-[60vh] flex items-center justify-center text-gray-600">
+//         Your checkout is empty
+//       </div>
+//     );
+//   }
+
+//   /**
+//    * UI
+//    */
+//   return (
+//     <div className="min-h-screen bg-[#f5f5f5]">
+//       <div className="max-w-[1100px] mx-auto px-4 py-10">
+//         <h1 className="text-2xl font-semibold mb-6">Checkout</h1>
+
+//         <OrderSummary
+//           cart={checkoutItems}
+//           loading={loading}
+//           onPay={handlePayNow}
+//           addresses={addresses}
+//           selectedAddress={selectedAddress}
+//           onAddressChange={setSelectedAddress}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CheckoutPage;
+
 import React, { useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
 import OrderSummary from "./components/OrderSummary";
@@ -1453,7 +1640,31 @@ const CheckoutPage = () => {
     });
 
   /**
-   * Handle payment (REDIRECT FLOW)
+   * 🔥 POLLING FUNCTION (THIS IS THE FIX)
+   */
+  const startPollingOrderStatus = (orderId) => {
+    const interval = setInterval(async () => {
+      try {
+        const res = await api.get(`/orders/order-status/${orderId}/`);
+        const status = res.data.status;
+
+        if (status === "CONFIRMED") {
+          clearInterval(interval);
+          window.location.href = "/order-success";
+        }
+
+        if (status === "FAILED") {
+          clearInterval(interval);
+          window.location.href = "/payment-failed";
+        }
+      } catch (err) {
+        console.error("Order polling failed", err);
+      }
+    }, 3000); // every 3 seconds
+  };
+
+  /**
+   * Handle payment
    */
   const handlePayNow = async () => {
     if (loading) return;
@@ -1488,7 +1699,7 @@ const CheckoutPage = () => {
         address_id: selectedAddress.id,
       });
 
-      // 2️⃣ Razorpay REDIRECT options (🔥 FIX)
+      // 2️⃣ Razorpay options
       const options = {
         key: data.razorpay.key,
         amount: data.razorpay.amount,
@@ -1498,13 +1709,7 @@ const CheckoutPage = () => {
         name: "SaajNika",
         description: "Order Payment",
 
-        // 🔥 IMPORTANT FOR PRODUCTION
-
-        // Razorpay will hit this BACKEND URL
-        callback_url: `${
-          import.meta.env.VITE_BACKEND_URL
-        }/payments/razorpay/callback/`,
-
+        callback_url: `${import.meta.env.VITE_BACKEND_URL}/payments/razorpay/callback/`,
         redirect: true,
 
         modal: {
@@ -1518,6 +1723,9 @@ const CheckoutPage = () => {
 
       const rzp = new window.Razorpay(options);
       rzp.open();
+
+      // 🔥 START POLLING (THIS FIXES QR ISSUE)
+      startPollingOrderStatus(data.order_id);
     } catch (err) {
       console.error(err);
       alert("Payment failed. Please try again.");
